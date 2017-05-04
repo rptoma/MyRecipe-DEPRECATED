@@ -50,8 +50,10 @@ class FavoritesTableTableViewController: UITableViewController {
         requestManager.requestRecipePreview(forUID: favorites[indexPath.row].uid!) { (result, error) in
             if error == nil {
                 if let result = result {
-                    cell.indicatorView.stopAnimating()
-                    cell.nameLabel.text = result.name
+                    DispatchQueue.main.async {
+                        cell.indicatorView.stopAnimating()
+                        cell.nameLabel.text = result.name
+                    }
                     cell.recipe = result
                 }
             }
