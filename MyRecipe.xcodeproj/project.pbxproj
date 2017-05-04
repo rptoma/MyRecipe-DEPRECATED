@@ -19,8 +19,9 @@
 		E29A795D1EA54AE10075E29C /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79571EA54AE10075E29C /* RecipeTableViewCell.swift */; };
 		E29A795E1EA54AE10075E29C /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79581EA54AE10075E29C /* RequestManager.swift */; };
 		E29A795F1EA54AE10075E29C /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79591EA54AE10075E29C /* TimeConverter.swift */; };
-		E2D0EF0C1EB8F6BE00DDD549 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0EF0B1EB8F6BE00DDD549 /* CoreDataManager.swift */; };
 		E2DAAAE31EA7A49E00A279F5 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DAAAE21EA7A49E00A279F5 /* RecipeDetailViewController.swift */; };
+		E640F3771EBB8727004D6837 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E640F3761EBB8727004D6837 /* Base.swift */; };
+		E640F3781EBB8997004D6837 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0EF0B1EB8F6BE00DDD549 /* CoreDataManager.swift */; };
 		E69262D31EADF18E00AF7431 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69262D21EADF18E00AF7431 /* AudioToolbox.framework */; };
 		E69262D51EADF19600AF7431 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69262D41EADF19600AF7431 /* AVFoundation.framework */; };
 		E69262D91EADF5A300AF7431 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69262D81EADF5A300AF7431 /* OpenEars.framework */; };
@@ -52,6 +53,7 @@
 		E29A79591EA54AE10075E29C /* TimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		E2D0EF0B1EB8F6BE00DDD549 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E2DAAAE21EA7A49E00A279F5 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		E640F3761EBB8727004D6837 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		E69262D21EADF18E00AF7431 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E69262D41EADF19600AF7431 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E69262D71EADF1D200AF7431 /* OpenEarsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenEarsHeader.h; sourceTree = "<group>"; };
@@ -61,7 +63,6 @@
 		E6B10EEE1EAAA6520010F974 /* RecipeStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeStep.swift; sourceTree = "<group>"; };
 		E6DF23A71EAB6CAD00164CFC /* RecipeStepViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeStepViewController.swift; sourceTree = "<group>"; };
 		E6F7475A1EBA796600984A1F /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
-		E6F7475C1EBA797200984A1F /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E6F747601EBA7BCA00984A1F /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		E6F747621EBA7BEA00984A1F /* RecipeDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDescription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,7 +185,6 @@
 		E29A79641EA54B2A0075E29C /* Webservices */ = {
 			isa = PBXGroup;
 			children = (
-				E6F7475C1EBA797200984A1F /* CoreDataManager.swift */,
 				E29A79581EA54AE10075E29C /* RequestManager.swift */,
 				E2D0EF0B1EB8F6BE00DDD549 /* CoreDataManager.swift */,
 			);
@@ -202,6 +202,7 @@
 		E29A796A1EA55C3F0075E29C /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				E640F3761EBB8727004D6837 /* Base.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -331,6 +332,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E640F3771EBB8727004D6837 /* Base.swift in Sources */,
 				E6DF23A81EAB6CAD00164CFC /* RecipeStepViewController.swift in Sources */,
 				E29A795B1EA54AE10075E29C /* Recipe.swift in Sources */,
 				E6F747611EBA7BCA00984A1F /* Ingredient.swift in Sources */,
@@ -343,8 +345,8 @@
 				E29A795C1EA54AE10075E29C /* RecipesTableViewController.swift in Sources */,
 				E6B10EEF1EAAA6520010F974 /* RecipeStep.swift in Sources */,
 				E29A79431EA549C80075E29C /* AppDelegate.swift in Sources */,
-				E2D0EF0C1EB8F6BE00DDD549 /* CoreDataManager.swift in Sources */,
 				E29A795F1EA54AE10075E29C /* TimeConverter.swift in Sources */,
+				E640F3781EBB8997004D6837 /* CoreDataManager.swift in Sources */,
 				E22D1DE11EB8FDB4009FFF6B /* FavoritesTableTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
