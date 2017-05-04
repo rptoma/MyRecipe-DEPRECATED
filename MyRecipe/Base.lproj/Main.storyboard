@@ -168,10 +168,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbL-gD-g0o">
-                                <rect key="frame" x="126" y="539" width="122" height="44"/>
+                                <rect key="frame" x="126" y="539" width="122" height="33"/>
                                 <color key="backgroundColor" red="0.72156862745098038" green="0.24741970002651215" blue="0.21722738444805145" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="122" id="CUs-Qm-h81"/>
+                                    <constraint firstAttribute="width" constant="122" id="AOb-T8-Q0q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
                                 <state key="normal" title="Start cooking">
@@ -181,29 +181,97 @@
                                     <segue destination="pp8-30-yBi" kind="show" identifier="Start and Show Step" id="DI4-zN-FcX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7w-JT-bta">
-                                <rect key="frame" x="16" y="20" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7w-JT-bta">
+                                <rect key="frame" x="16" y="8" width="55" height="30"/>
                                 <state key="normal" title="Favorite"/>
                                 <connections>
                                     <action selector="favoriteRecipe:" destination="wr8-2Q-7Na" eventType="touchUpInside" id="0DY-QV-Thd"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="81V-oW-HVT">
+                                <rect key="frame" x="16" y="39" width="344" height="479"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Nan-wD-XAQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="344" height="287.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WY1-rz-J9B">
+                                                <rect key="frame" x="0.0" y="0.0" width="138.5" height="22"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KcL-dp-7cI">
+                                                <rect key="frame" x="0.0" y="22" width="344" height="265.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QiO-M3-WM2">
+                                        <rect key="frame" x="0.0" y="287.5" width="217" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2S-Ci-jLV">
+                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="36"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" text="30-40 minutes" translatesAutoresizingMaskIntoConstraints="NO" id="ckg-rb-eeO">
+                                                <rect key="frame" x="108.5" y="0.0" width="108.5" height="36"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PSu-x3-ndw">
+                                        <rect key="frame" x="0.0" y="323.5" width="163" height="155.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="Ingredients:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwE-KJ-j1d">
+                                                <rect key="frame" x="0.0" y="0.0" width="163" height="22"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YdF-3t-MMJ">
+                                                <rect key="frame" x="0.0" y="22" width="163" height="133.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <string key="text">Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity</string>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="kbL-gD-g0o" secondAttribute="bottom" constant="20" symbolic="YES" id="E72-A8-6xj"/>
-                            <constraint firstItem="kbL-gD-g0o" firstAttribute="top" secondItem="t2N-F0-ba0" secondAttribute="bottom" constant="539" id="IOL-uJ-cKU"/>
-                            <constraint firstItem="kbL-gD-g0o" firstAttribute="centerX" secondItem="ULn-rh-lf1" secondAttribute="centerX" id="wjZ-mb-LeL"/>
+                            <constraint firstItem="81V-oW-HVT" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leadingMargin" id="7oN-Zf-x3b"/>
+                            <constraint firstItem="81V-oW-HVT" firstAttribute="centerX" secondItem="ULn-rh-lf1" secondAttribute="centerX" id="Fug-aZ-JIN"/>
+                            <constraint firstAttribute="bottom" secondItem="81V-oW-HVT" secondAttribute="bottom" constant="85" id="NGV-DJ-ynn"/>
+                            <constraint firstItem="81V-oW-HVT" firstAttribute="top" secondItem="ULn-rh-lf1" secondAttribute="top" constant="39" id="Pa0-sx-wxy"/>
+                            <constraint firstItem="I7w-JT-bta" firstAttribute="leading" secondItem="81V-oW-HVT" secondAttribute="leading" id="UHE-Z4-obc"/>
+                            <constraint firstItem="kbL-gD-g0o" firstAttribute="centerX" secondItem="ULn-rh-lf1" secondAttribute="centerX" id="ZkQ-z1-mt7"/>
+                            <constraint firstItem="kbL-gD-g0o" firstAttribute="top" secondItem="81V-oW-HVT" secondAttribute="bottom" constant="21" id="j1x-Lk-m5B"/>
+                            <constraint firstItem="I7w-JT-bta" firstAttribute="top" secondItem="t2N-F0-ba0" secondAttribute="bottom" constant="8" symbolic="YES" id="qrJ-jh-zFd"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="descriptionTextView" destination="KcL-dp-7cI" id="IzW-lL-ByX"/>
+                        <outlet property="durationTextView" destination="ckg-rb-eeO" id="tje-Yq-7OU"/>
+                        <outlet property="ingredientsTextView" destination="YdF-3t-MMJ" id="jFg-F8-fUM"/>
                         <outlet property="startButton" destination="kbL-gD-g0o" id="igL-pn-sXu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WYc-cj-rij" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2994" y="41"/>
+            <point key="canvasLocation" x="2992.8000000000002" y="40.929535232383813"/>
         </scene>
         <!--Recipe Step View Controller-->
         <scene sceneID="yc3-h5-PBW">
@@ -236,29 +304,46 @@
                                     </textView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUC-Eh-Riq">
-                                <rect key="frame" x="126" y="539" width="122" height="44"/>
-                                <color key="backgroundColor" red="0.72156862745098038" green="0.24705882352941178" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="122" id="b9H-sw-tdX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
-                                <state key="normal" title="Next">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="nextButtonAction:" destination="pp8-30-yBi" eventType="touchUpInside" id="9e5-18-pby"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PMp-Wa-sf4">
+                                <rect key="frame" x="77" y="536" width="220" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r62-DQ-OpX">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <state key="normal" image="Recurring Appointment-50"/>
+                                        <connections>
+                                            <action selector="replayAction:" destination="pp8-30-yBi" eventType="touchUpInside" id="Y1Q-GQ-BDQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUC-Eh-Riq">
+                                        <rect key="frame" x="50" y="0.0" width="122" height="50"/>
+                                        <color key="backgroundColor" red="0.72156862745098038" green="0.24705882352941178" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="122" id="b9H-sw-tdX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
+                                        <state key="normal" title="Next">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="nextButtonAction:" destination="pp8-30-yBi" eventType="touchUpInside" id="9e5-18-pby"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fL-Lz-QJG">
+                                        <rect key="frame" x="172" y="0.0" width="48" height="50"/>
+                                        <state key="normal" image="Pause-64"/>
+                                        <connections>
+                                            <action selector="pauseAction:" destination="pp8-30-yBi" eventType="touchUpInside" id="65Q-va-1sz"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Opy-Rk-idx" secondAttribute="bottom" constant="75" id="6s7-uJ-jO4"/>
-                            <constraint firstItem="HUC-Eh-Riq" firstAttribute="top" secondItem="Opy-Rk-idx" secondAttribute="bottom" constant="11" id="E9K-gm-1Fa"/>
                             <constraint firstItem="Opy-Rk-idx" firstAttribute="trailing" secondItem="6wv-Fj-Uaq" secondAttribute="trailingMargin" id="Ene-gN-bb2"/>
                             <constraint firstItem="Opy-Rk-idx" firstAttribute="top" secondItem="eRr-Xp-Eue" secondAttribute="bottom" constant="30" id="JZK-ce-ECC"/>
-                            <constraint firstItem="HUC-Eh-Riq" firstAttribute="centerX" secondItem="Opy-Rk-idx" secondAttribute="centerX" id="XJ7-bB-V1f"/>
-                            <constraint firstAttribute="bottom" secondItem="HUC-Eh-Riq" secondAttribute="bottom" constant="20" symbolic="YES" id="cK7-gH-d8A"/>
                             <constraint firstItem="Opy-Rk-idx" firstAttribute="leading" secondItem="6wv-Fj-Uaq" secondAttribute="leadingMargin" id="ex3-CC-dJ5"/>
                         </constraints>
                     </view>
@@ -270,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8m-Q3-qBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2880.8000000000002" y="38.23088455772114"/>
+            <point key="canvasLocation" x="3801" y="41"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="12u-bJ-KSq">
@@ -295,7 +380,11 @@
             <point key="canvasLocation" x="295.19999999999999" y="40.929535232383813"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Pause-64" width="48" height="48"/>
+        <image name="Recurring Appointment-50" width="50" height="50"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="e46-kg-tub"/>
+        <segue reference="Ma2-HJ-Qgc"/>
     </inferredMetricsTieBreakers>
 </document>

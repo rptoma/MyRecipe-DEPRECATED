@@ -15,11 +15,27 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
     @IBOutlet weak var taskDescriptionView: UITextView!
     @IBOutlet weak var nextButtonOutlet: UIButton!
     
+    @IBAction func replayAction(_ sender: Any) {
+        replayTaskDescription()
+    }
+    
+    @IBAction func pauseAction(_ sender: Any) {
+        if pauseEnabler == true{
+            pauseEnabler = false
+            pauseTaskDescription()
+        }
+        else{
+            pauseEnabler = true
+            pauseTaskDescription()
+        }
+    }
+
+    
     var openEarsEventsObserver = OEEventsObserver()
     let speechSynthesizer = AVSpeechSynthesizer()
     
+    var pauseEnabler = false
     var taskCounter:Int = 0
-    
     var recipeSteps:[RecipeStep] = [RecipeStep]()
     
     override func viewDidLoad() {
@@ -72,7 +88,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
             taskDescriptionView.text = recipeSteps[taskCounter].description
             readTaskDescription(enable: true)
             taskCounter += 1
-            
+            pauseEnabler = false
         }
         else {
             finishMessageAlert()
@@ -133,6 +149,21 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
         else {
             speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
         }
+    }
+    func pauseTaskDescription(){
+        
+        if pauseEnabler == true{
+            speechSynthesizer.pauseSpeaking(at: AVSpeechBoundary.immediate)
+        }
+        else {
+            speechSynthesizer.continueSpeaking()
+        }
+    }
+    func replayTaskDescription(){
+        let speechUtterance = AVSpeechUtterance(string: taskDescriptionView.text)
+        speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
+        speechSynthesizer.speak(speechUtterance)
+        pauseEnabler = false
     }
     
     func backToDetailView(){

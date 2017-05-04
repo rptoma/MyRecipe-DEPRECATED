@@ -11,16 +11,26 @@ import UIKit
 class RecipeDetailViewController: UIViewController {
 
     @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
+    @IBOutlet weak var durationTextView: UITextView!
+    
+    @IBOutlet weak var ingredientsTextView: UITextView!
+    
+    
     
     var recipe: Recipe!
     let requestManager = RequestManager()
     var recipeSteps = [RecipeStep]()
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor.white
         customizeStartButton()
         recipeStepsRequest()
+        recipeDescriptionRequest()
+        
         
         
     }
@@ -86,7 +96,29 @@ class RecipeDetailViewController: UIViewController {
         
     }
     
+    func recipeDescriptionRequest(){
+        
+        requestManager.requestRecipeDesctiption(forUID: recipe.uid!) { (result, error) in
+            if error == nil {
+                print("made steps request for recipe \(self.recipe.uid!) with name: \(self.recipe.name!)")
+                
+                self.updateDetailView(recipeDescription: result!)
+                
+            }
+            else {
+                print(error!)
+            }
+        }
+    }
     
-    
+    func updateDetailView(recipeDescription:RecipeDescription){
+        descriptionTextView.text = recipeDescription.recipeDescription
+        durationTextView.text = TimeConverter.getTime(from: recipeDescription.duration!)
+        var ingredientsList:String = String()
+        for ingredient in recipeDescription.ingredients{
+                ingredientsList = ingredientsList + "\(ingredient.name!) - \(Int(ingredient.quantity!)) \(ingredient.unit!) \n"
+        }
+        ingredientsTextView.text = ingredientsList
+    }
     
 }
