@@ -124,7 +124,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-Xv-uXh">
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ndi-Xv-uXh">
                                             <rect key="frame" x="177" y="12" width="20" height="20"/>
                                         </activityIndicatorView>
                                     </subviews>
@@ -236,6 +236,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ma2-HJ-Qgc"/>
+        <segue reference="e46-kg-tub"/>
     </inferredMetricsTieBreakers>
 </document>

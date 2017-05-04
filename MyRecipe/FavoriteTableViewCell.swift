@@ -17,8 +17,6 @@ class FavoriteTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        indicatorView.hidesWhenStopped = true
-        indicatorView.startAnimating()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
