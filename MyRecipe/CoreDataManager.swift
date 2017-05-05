@@ -56,6 +56,15 @@ class CoreDataManager {
         catch let error as NSError{
             handler(nil, error)
         }
-
+    }
+    
+    public func deleteFavorite(forUID uid: String) throws {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        let favorites = try context.fetch(Favorite.fetchRequest()) as! [Favorite]
+        for fav in favorites {
+            if fav.uid == uid {
+                context.delete(fav)
+            }
+        }
     }
 }

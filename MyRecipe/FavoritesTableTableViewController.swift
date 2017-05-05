@@ -83,4 +83,17 @@ class FavoritesTableTableViewController: UITableViewController {
             }
         }
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            do {
+                try coreDataManager.deleteFavorite(forUID: favorites[indexPath.row].uid!)
+                favorites.remove(at: indexPath.row)
+            }
+            catch {
+                print("Delete error")
+            }
+            tableView.reloadData()
+        }
+    }
 }
