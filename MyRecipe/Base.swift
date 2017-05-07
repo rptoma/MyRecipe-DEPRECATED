@@ -17,25 +17,25 @@ class Base {
     
     static var RECIPES_LIST_BASE_URL: String! {
         get {
-            return "https://private-anon-c6e411992b-myrecipes1.apiary-mock.com/api/v1/recipes?page="
+            return "https://myrecipesapi.herokuapp.com/api/v1/recipes?page="
         }
     }
     
     static var RECIPE_DESCRIPTION_BASE_URL: String! {
         get {
-            return "https://private-anon-c6e411992b-myrecipes1.apiary-mock.com/api/v1/recipes/"
+            return "https://myrecipesapi.herokuapp.com/api/v1/recipes/"
         }
     }
     
     static var RECIPES_SEARCH_LIST_BASE_URL: String! {
         get {
-            return "https://private-anon-c6e411992b-myrecipes1.apiary-mock.com/api/v1/recipes"
+            return "https://myrecipesapi.herokuapp.com/api/v1/recipes"
         }
     }
     
     static var RECIPE_PREVIEW_BASE_URL: String! {
         get {
-            return "https://private-anon-c6e411992b-myrecipes1.apiary-mock.com/api/v1/previews/"
+            return "https://myrecipesapi.herokuapp.com/api/v1/previews/"
         }
     }
     

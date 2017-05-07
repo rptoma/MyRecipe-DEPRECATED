@@ -18,6 +18,7 @@ class RequestManager {
     public func requestRecipes(forPage page: Int, completionHandler: @escaping (_ result: [Recipe]?, _ error: String?) ->()) {
         
         let requestURL = recipeListBaseURL + String(page)
+        print(requestURL)
         
         Alamofire.request(requestURL).validate().responseJSON { response in
             
@@ -167,6 +168,8 @@ class RequestManager {
                     switch(httpStatusCode) {
                     case 404:
                         message = "404 error"
+                    case 400:
+                        message = "no recipes"
                     default:
                         message = errorAlamo.localizedDescription
                     }

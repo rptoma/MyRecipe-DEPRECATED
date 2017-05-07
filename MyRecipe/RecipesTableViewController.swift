@@ -48,8 +48,8 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         setupTableView()
         setupSearchBar()
         
-        pageNumber = 0
-        pageNumberSearch = 0
+        pageNumber = 1
+        pageNumberSearch = 1
         
         self.tableView.setValue(navigationController?.navigationBar.barTintColor , forKey: "tableHeaderBackgroundColor")
 
@@ -144,8 +144,10 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         requestManager.requestRecipes(forPage: pageNumber) { (result, error) in
             if error == nil {
                 print("made list request for page \(self.pageNumber)")
-                self.recipes += result!
-                self.pageNumber = self.pageNumber + 1
+                if let result = result {
+                    self.recipes += result
+                    self.pageNumber = self.pageNumber + 1
+                }
             }
             else {
                 print(error!)
@@ -156,7 +158,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     func recipeSearchRequest(query: String) {
         requestManager.requestRecipes(forQuery: query, forPage: pageNumberSearch) { (result, error) in
             if error == nil {
-                print("made search request for page \(self.pageNumberSearch)")
+                print("made search request for page \(self.pageNumberSearch), \(query)")
                 self.searchRecipes += result!
                 self.pageNumberSearch = self.pageNumberSearch + 1
             }
@@ -164,14 +166,15 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        pageNumberSearch = 1
+        pageNumber = 1
         recipes = [Recipe]()
-        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchRecipes = [Recipe]()
-        pageNumberSearch = 0
-        pageNumber = 0
+        pageNumberSearch = 1
+        pageNumber = 1
         recipeSearchRequest(query: searchBar.text!)
     }
     

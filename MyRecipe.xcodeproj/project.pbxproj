@@ -132,6 +132,7 @@
 				E22D1DE81EB932B3009FFF6B /* RecipeDescription.swift */,
 				E22D1DE61EB932AB009FFF6B /* Ingredient.swift */,
 				E2D0EF081EB8F36E00DDD549 /* CoreData.xcdatamodeld */,
+				E2DAAAE21EA7A49E00A279F5 /* RecipeDetailViewController.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -139,9 +140,8 @@
 		E29A79621EA54B190075E29C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E2DAAAE21EA7A49E00A279F5 /* RecipeDetailViewController.swift */,
-				E22D1DE01EB8FDB4009FFF6B /* FavoritesTableTableViewController.swift */,
 				E29A79561EA54AE10075E29C /* RecipesTableViewController.swift */,
+				E22D1DE01EB8FDB4009FFF6B /* FavoritesTableTableViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
