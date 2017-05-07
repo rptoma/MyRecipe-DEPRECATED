@@ -140,7 +140,6 @@
                                 <connections>
                                     <outlet property="indicatorView" destination="ndi-Xv-uXh" id="wRZ-l2-HiN"/>
                                     <outlet property="nameLabel" destination="b29-jE-Y2h" id="Vhg-Ce-fYD"/>
-                                    <segue destination="wr8-2Q-7Na" kind="show" identifier="Show Recipe Detail" id="e46-kg-tub"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -149,6 +148,9 @@
                             <outlet property="delegate" destination="4q8-xo-cvu" id="gIi-Be-LMV"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="wr8-2Q-7Na" kind="show" identifier="Show Recipe Detail" id="FLW-Ja-e5D"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9b-sA-hbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,6 +238,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="e46-kg-tub"/>
+        <segue reference="FLW-Ja-e5D"/>
     </inferredMetricsTieBreakers>
 </document>

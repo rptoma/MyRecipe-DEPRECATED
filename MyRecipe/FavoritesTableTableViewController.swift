@@ -65,6 +65,13 @@ class FavoritesTableTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! FavoriteTableViewCell
+        if cell.recipe != nil {
+            performSegue(withIdentifier: "Show Recipe Detail", sender: cell)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {

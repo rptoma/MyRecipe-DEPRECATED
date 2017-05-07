@@ -20,11 +20,6 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     
     var recipes = [Recipe]() {
         didSet {
-//            self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
-//            self.navigationController?.navigationBar.shadowImage = UIImage()
-            
-            //searchController.searchBar.backgroundColor = navigationController?.navigationBar.barTintColor
-            
             if searchController.isActive == true {
                 recipeRequest()
             }
@@ -167,10 +162,6 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
             }
         }
     }
-    
-//    override func viewDidAppear(_ animated: Bool) {
-//        tableView.setContentOffset(CGPoint.zero, animated: false)
-//    }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         recipes = [Recipe]()
