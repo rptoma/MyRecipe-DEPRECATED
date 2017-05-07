@@ -76,10 +76,8 @@ class FavoritesTableTableViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "Show Recipe Detail":
-                if let indexPath = tableView.indexPath(for: sender as! FavoriteTableViewCell) {
-                    print(indexPath.row)
+                if tableView.indexPath(for: sender as! FavoriteTableViewCell) != nil {
                     if let vc = segue.destination as? RecipeDetailViewController {
-                        print(indexPath.row)
                         if let sender = sender as? FavoriteTableViewCell {
                             vc.recipe = sender.recipe
                         }
