@@ -89,6 +89,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
             if error == nil {
                 print("made list request for page \(self.pageNumber)")
                 if let result = result {
+                    self.refreshing = false
                     self.recipes += result
                     self.pageNumber = self.pageNumber + 1
                 }
@@ -96,7 +97,6 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
             else {
                 print(error!)
             }
-            self.refreshing = false
             refreshControl.endRefreshing()
         }
     }
@@ -195,6 +195,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         pageNumberSearch = 1
         pageNumber = 1
         recipes = [Recipe]()
+        self.refreshControl = UIRefreshControl()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -202,6 +203,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         pageNumberSearch = 1
         pageNumber = 1
         recipeSearchRequest(query: searchBar.text!)
+        self.refreshControl = nil
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
