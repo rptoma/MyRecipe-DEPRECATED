@@ -139,7 +139,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         else {
             cell.loadRecipePreview(recipe: searchRecipes[indexPath.row])
             if nearSearchRowUpdate(currentIndexPath: indexPath) {
-                recipeSearchRequest(query: searchController.searchBar.text!)
+                recipeSearchRequest(query: searchController.searchBar.text!, completionHandler: nil)
             }
         }
         
@@ -175,7 +175,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
-    private func recipeSearchRequest(query: String) {
+    private func recipeSearchRequest(query: String, completionHandler: ((_ error: String?) -> ())?) {
         requestManager.requestRecipes(forQuery: query, forPage: pageNumberSearch) { (result, error) in
             if error == nil {
                 print("made search request for page \(self.pageNumberSearch), \(query)")
@@ -186,6 +186,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
             else {
                 print(error ?? "unknown error")
             }
+            completionHandler?(error)
         }
     }
     
@@ -202,7 +203,13 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         searchRecipes = [Recipe]()
         pageNumberSearch = 1
         pageNumber = 1
-        recipeSearchRequest(query: searchBar.text!)
+        
+        recipeSearchRequest(query: searchBar.text!) { (error) in
+            if error != nil {
+                self.refreshing = false
+                self.searchRecipes = [Recipe]()
+            }
+        }
         self.refreshControl = nil
     }
     
