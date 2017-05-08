@@ -35,7 +35,9 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     
     private var searchRecipes = [Recipe]() {
         didSet {
-            tableView.reloadData()
+            if refreshing == false {
+                tableView.reloadData()
+            }
         }
     }
     
@@ -88,20 +90,8 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         refreshing = true
         recipes = [Recipe]()
         pageNumber = 1
-        requestManager.requestRecipes(forPage: pageNumber) { (result, error) in
-            if error == nil {
-                print("made list request for page \(self.pageNumber)")
-                if let result = result {
-                    self.refreshing = false
-                    self.recipes += result
-                    self.pageNumber = self.pageNumber + 1
-                }
-            }
-            else {
-                print(error!)
-            }
-            refreshControl.endRefreshing()
-        }
+        recipeRequest()
+        refreshControl.endRefreshing()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -137,6 +127,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
+        
         if searchController.isActive == false {
             if indexPath.row < recipes.count && recipes.count != 0 {
                 cell.loadRecipePreview(recipe: recipes[indexPath.row])
@@ -173,6 +164,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
             if error == nil {
                 print("made list request for page \(self.pageNumber)")
                 if let result = result {
+                    self.refreshing = false
                     self.recipes += result
                     self.pageNumber = self.pageNumber + 1
                 }
@@ -187,6 +179,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         requestManager.requestRecipes(forQuery: query, forPage: pageNumberSearch) { (result, error) in
             if error == nil {
                 print("made search request for page \(self.pageNumberSearch), \(query)")
+                self.refreshing = false
                 self.searchRecipes += result!
                 self.pageNumberSearch = self.pageNumberSearch + 1
             }
@@ -202,6 +195,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        refreshing = true
         searchRecipes = [Recipe]()
         pageNumberSearch = 1
         pageNumber = 1
