@@ -68,10 +68,10 @@ class RequestManager {
             "keywords": query
         ]
         
-        Alamofire.request(Base.RECIPES_SEARCH_LIST_BASE_URL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+        Alamofire.request(Base.RECIPES_SEARCH_LIST_BASE_URL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).validate().responseJSON { (response) in
             var result: [Recipe]?
             var error: String?
-            
+            //print(response.response?.statusCode)
             switch response.result {
                 
             case .success(let data):

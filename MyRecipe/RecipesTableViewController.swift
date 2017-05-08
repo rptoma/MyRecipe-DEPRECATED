@@ -183,6 +183,9 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
                 self.searchRecipes += result!
                 self.pageNumberSearch = self.pageNumberSearch + 1
             }
+            else {
+                print(error)
+            }
         }
     }
     
