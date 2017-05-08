@@ -16,12 +16,37 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var durationLabel: UILabel!
     @IBOutlet weak var difficultyLabel: UILabel!
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var delimiterLabel: UILabel!
     
     var uid: String!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        nameLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
+        nameLabel.layer.shadowOpacity = 0.5
+        nameLabel.layer.shadowRadius = 1.5
+        nameLabel.layer.shouldRasterize = true
+        nameLabel.layer.rasterizationScale = UIScreen.main.scale
+        
+        difficultyLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
+        difficultyLabel.layer.shadowOpacity = 0.5
+        difficultyLabel.layer.shadowRadius = 1.5
+        difficultyLabel.layer.shouldRasterize = true
+        difficultyLabel.layer.rasterizationScale = UIScreen.main.scale
+        
+        durationLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
+        durationLabel.layer.shadowOpacity = 0.5
+        durationLabel.layer.shadowRadius = 1.5
+        durationLabel.layer.shouldRasterize = true
+        durationLabel.layer.rasterizationScale = UIScreen.main.scale
+        
+        delimiterLabel.layer.shadowOffset = CGSize(width: 0, height: 0)
+        delimiterLabel.layer.shadowOpacity = 0.5
+        delimiterLabel.layer.shadowRadius = 1.5
+        delimiterLabel.layer.shouldRasterize = true
+        delimiterLabel.layer.rasterizationScale = UIScreen.main.scale
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

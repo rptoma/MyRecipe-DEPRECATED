@@ -77,6 +77,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="backgroundImageView" destination="8is-Tr-hse" id="BZa-Ym-QBV"/>
+                                    <outlet property="delimiterLabel" destination="xh4-46-sfC" id="nob-1L-fA9"/>
                                     <outlet property="difficultyLabel" destination="5FU-if-SkA" id="BEl-ve-coN"/>
                                     <outlet property="durationLabel" destination="Hoh-Wd-nQ5" id="Ql5-I1-pK2"/>
                                     <outlet property="nameLabel" destination="fCu-pD-1WL" id="6wb-46-3Qm"/>
