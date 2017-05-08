@@ -49,11 +49,26 @@ class RecipeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        hideLabels()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
+    }
+    
+    func hideLabels() {
+        nameLabel.isHidden = true
+        durationLabel.isHidden = true
+        difficultyLabel.isHidden = true
+        delimiterLabel.isHidden = true
+    }
+    
+    func showLabels() {
+        nameLabel.isHidden = false
+        durationLabel.isHidden = false
+        difficultyLabel.isHidden = false
+        delimiterLabel.isHidden = false
     }
     
     private func loadImage(fromRecipe recipe: Recipe) {
@@ -62,7 +77,11 @@ class RecipeTableViewCell: UITableViewCell {
                 let resource = ImageResource(downloadURL: url, cacheKey: nil)
                 let processor = BlurImageProcessor(blurRadius: 3) >> ColorControlsProcessor(brightness: 0, contrast: 1, saturation: 1, inputEV: -0.3)
                 backgroundImageView.kf.indicatorType = .activity
-                backgroundImageView.kf.setImage(with: resource, placeholder: nil, options: [.processor(processor)], progressBlock: nil, completionHandler: nil)
+                backgroundImageView.kf.setImage(with: resource, placeholder: nil, options: [.processor(processor)], progressBlock: nil, completionHandler: { (_, _, _, _) in
+                    DispatchQueue.main.async {
+                        self.showLabels()
+                    }
+                })
             }
         }
         else {
