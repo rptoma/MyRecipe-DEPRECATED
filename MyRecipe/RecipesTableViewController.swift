@@ -170,7 +170,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
                 }
             }
             else {
-                print(error!)
+                print(error ?? "unknown error")
             }
         }
     }
@@ -184,7 +184,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
                 self.pageNumberSearch = self.pageNumberSearch + 1
             }
             else {
-                print(error)
+                print(error ?? "unknown error")
             }
         }
     }

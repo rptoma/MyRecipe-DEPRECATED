@@ -62,6 +62,7 @@ class RecipeTableViewCell: UITableViewCell {
         durationLabel.isHidden = true
         difficultyLabel.isHidden = true
         delimiterLabel.isHidden = true
+        self.setNeedsLayout()
     }
     
     func showLabels() {
@@ -69,6 +70,7 @@ class RecipeTableViewCell: UITableViewCell {
         durationLabel.isHidden = false
         difficultyLabel.isHidden = false
         delimiterLabel.isHidden = false
+        self.setNeedsLayout()
     }
     
     private func loadImage(fromRecipe recipe: Recipe) {
