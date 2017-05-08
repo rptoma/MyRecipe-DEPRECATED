@@ -111,10 +111,12 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
-        if searchController.isActive == false && indexPath.row < recipes.count && recipes.count != 0 {
-            cell.loadRecipePreview(recipe: recipes[indexPath.row])
-            if nearRowUpdate(currentIndexPath: indexPath) {
-                recipeRequest()
+        if searchController.isActive == false {
+            if indexPath.row < recipes.count && recipes.count != 0 {
+                cell.loadRecipePreview(recipe: recipes[indexPath.row])
+                if nearRowUpdate(currentIndexPath: indexPath) {
+                    recipeRequest()
+                }
             }
         }
         else {
