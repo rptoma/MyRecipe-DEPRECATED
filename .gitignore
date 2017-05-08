@@ -7,5 +7,5 @@
 *.perspectivev3
 !default.perspectivev3
 xcuserdata/
-xcuserdata
 Pods/Pods.xcodeproj/xcuserdata
+MyRecipe.xcworkspace/xcuserdata/
