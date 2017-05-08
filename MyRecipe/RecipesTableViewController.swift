@@ -75,10 +75,13 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         tableView.tableHeaderView = searchController.searchBar
     }
     
+    private func setupRefreshControl() {
+        self.refreshControl?.addTarget(self, action: #selector(RecipesTableViewController.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
+    }
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        self.refreshControl?.addTarget(self, action: #selector(RecipesTableViewController.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
+        setupRefreshControl()
     }
     
     func handleRefresh(refreshControl: UIRefreshControl) {
@@ -196,6 +199,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         pageNumber = 1
         recipes = [Recipe]()
         self.refreshControl = UIRefreshControl()
+        setupRefreshControl()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
