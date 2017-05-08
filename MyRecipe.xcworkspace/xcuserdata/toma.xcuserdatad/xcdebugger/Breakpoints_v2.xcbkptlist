@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyRecipe/RecipesTableViewController.swift"
-            timestampString = "515887515.866127"
+            timestampString = "515930565.440916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216">
+            startingLineNumber = "251"
+            endingLineNumber = "251">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -24,11 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyRecipe/RecipesTableViewController.swift"
-            timestampString = "515887515.866127"
+            timestampString = "515930565.440916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203">
+            startingLineNumber = "238"
+            endingLineNumber = "238">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -38,11 +38,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyRecipe/RecipesTableViewController.swift"
-            timestampString = "515887515.866127"
+            timestampString = "515930565.440916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198">
+            startingLineNumber = "233"
+            endingLineNumber = "233">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -52,29 +52,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyRecipe/RecipesTableViewController.swift"
-            timestampString = "515887794.548404"
+            timestampString = "515930565.440916"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "searchBarCancelButtonClicked(_:)"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "searchBarSearchButtonClicked(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyRecipe/RequestManager.swift"
-            timestampString = "515887666.88299"
+            filePath = "MyRecipe/RecipesTableViewController.swift"
+            timestampString = "515929916.803732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "requestRecipes(forPage:completionHandler:)"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "handleRefresh(refreshControl:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyRecipe/RecipesTableViewController.swift"
+            timestampString = "515929918.819982"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "recipes"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyRecipe.RecipesTableViewController.init (style : __C.UITableViewStyle) -&gt; MyRecipe.RecipesTableViewController"
+                  moduleName = "MyRecipe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/toma/Desktop/Swift/MyRecipe/MyRecipe/MyRecipe/RecipesTableViewController.swift"
+                  timestampString = "515930072.242927"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyRecipe.RecipesTableViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; MyRecipe.RecipesTableViewController"
+                  moduleName = "MyRecipe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/toma/Desktop/Swift/MyRecipe/MyRecipe/MyRecipe/RecipesTableViewController.swift"
+                  timestampString = "515930072.245377"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "164">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyRecipe.RecipesTableViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;MyRecipe.RecipesTableViewController&gt;"
+                  moduleName = "MyRecipe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/toma/Desktop/Swift/MyRecipe/MyRecipe/MyRecipe/RecipesTableViewController.swift"
+                  timestampString = "515930072.247741"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "23"
+                  endingLineNumber = "23"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -84,11 +147,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyRecipe/RecipesTableViewController.swift"
-            timestampString = "515887688.741446"
+            timestampString = "515929923.682164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -96,48 +159,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyRecipe/RecipesTableViewController.swift"
-            timestampString = "515887714.41338"
+            timestampString = "515929939.210848"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "recipes"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyRecipe/RecipesTableViewController.swift"
-            timestampString = "515887722.077638"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "recipes"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyRecipe/RecipesTableViewController.swift"
-            timestampString = "515887768.471938"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "recipeRequest()"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "handleRefresh(refreshControl:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
