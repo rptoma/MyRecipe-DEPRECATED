@@ -10,7 +10,9 @@ import UIKit
 
 class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     
-    let searchController = UISearchController(searchResultsController: nil)
+    private var refreshing = false
+    
+    private let searchController = UISearchController(searchResultsController: nil)
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         get {
@@ -18,27 +20,29 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
-    var recipes = [Recipe]() {
+    private var recipes = [Recipe]() {
         didSet {
             if searchController.isActive == true {
                 recipeRequest()
             }
             else {
-                tableView.reloadData()
+                if refreshing == false {
+                    tableView.reloadData()
+                }
             }
         }
     }
     
-    var searchRecipes = [Recipe]() {
+    private var searchRecipes = [Recipe]() {
         didSet {
             tableView.reloadData()
         }
     }
     
-    let requestManager = RequestManager()
+    private let requestManager = RequestManager()
     
-    var pageNumber: Int!
-    var pageNumberSearch: Int!
+    private var pageNumber: Int!
+    private var pageNumberSearch: Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,18 +55,16 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         pageNumber = 1
         pageNumberSearch = 1
         
-        self.tableView.setValue(navigationController?.navigationBar.barTintColor , forKey: "tableHeaderBackgroundColor")
-
         recipeRequest()
     }
     
-    func setupSearchBar() {
+    private func setupSearchBar() {
         searchController.searchBar.delegate = self
         
         searchController.dimsBackgroundDuringPresentation = false
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.placeholder = "Search for a recipe"
-
+        
         searchController.searchBar.barTintColor = navigationController?.navigationBar.barTintColor
         searchController.searchBar.tintColor = UIColor.white
         searchController.searchBar.isTranslucent = false
@@ -73,15 +75,39 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         tableView.tableHeaderView = searchController.searchBar
     }
     
-    func setupTableView() {
+    private func setupRefreshControl() {
+        self.refreshControl?.addTarget(self, action: #selector(RecipesTableViewController.handleRefresh(refreshControl:)), for: UIControlEvents.valueChanged)
+    }
+    private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        setupRefreshControl()
     }
-
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        refreshing = true
+        recipes = [Recipe]()
+        pageNumber = 1
+        requestManager.requestRecipes(forPage: pageNumber) { (result, error) in
+            if error == nil {
+                print("made list request for page \(self.pageNumber)")
+                if let result = result {
+                    self.refreshing = false
+                    self.recipes += result
+                    self.pageNumber = self.pageNumber + 1
+                }
+            }
+            else {
+                print(error!)
+            }
+            refreshControl.endRefreshing()
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
-                case "Show Recipe Detail":
+            case "Show Recipe Detail":
                 if let indexPath = tableView.indexPath(for: sender as! RecipeTableViewCell) {
                     print(indexPath.row)
                     if let vc = segue.destination as? RecipeDetailViewController {
@@ -94,17 +120,17 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
                         }
                     }
                 }
-                default:
-                    break
+            default:
+                break
             }
         }
     }
     
-    func nearRowUpdate(currentIndexPath indexPath: IndexPath) -> Bool {
+    private func nearRowUpdate(currentIndexPath indexPath: IndexPath) -> Bool {
         return indexPath.row == recipes.count - Base.NUMBER_OF_ROWS_BEFORE_UPDATE
     }
     
-    func nearSearchRowUpdate(currentIndexPath indexPath: IndexPath) -> Bool {
+    private func nearSearchRowUpdate(currentIndexPath indexPath: IndexPath) -> Bool {
         return indexPath.row == searchRecipes.count - Base.NUMBER_OF_ROWS_BEFORE_UPDATE
     }
     
@@ -142,7 +168,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
-    func recipeRequest() {
+    private func recipeRequest() {
         requestManager.requestRecipes(forPage: pageNumber) { (result, error) in
             if error == nil {
                 print("made list request for page \(self.pageNumber)")
@@ -157,7 +183,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         }
     }
     
-    func recipeSearchRequest(query: String) {
+    private func recipeSearchRequest(query: String) {
         requestManager.requestRecipes(forQuery: query, forPage: pageNumberSearch) { (result, error) in
             if error == nil {
                 print("made search request for page \(self.pageNumberSearch), \(query)")
@@ -171,6 +197,8 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         pageNumberSearch = 1
         pageNumber = 1
         recipes = [Recipe]()
+        self.refreshControl = UIRefreshControl()
+        setupRefreshControl()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -178,6 +206,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         pageNumberSearch = 1
         pageNumber = 1
         recipeSearchRequest(query: searchBar.text!)
+        self.refreshControl = nil
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
@@ -194,5 +223,5 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
 }

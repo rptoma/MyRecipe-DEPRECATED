@@ -14,7 +14,7 @@
         <scene sceneID="QOk-nB-ah9">
             <objects>
                 <tableViewController extendedLayoutIncludesOpaqueBars="YES" id="2k2-P9-sr7" customClass="RecipesTableViewController" customModule="MyRecipe" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="159" sectionHeaderHeight="28" sectionFooterHeight="28" id="fj8-U0-D0V">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsMultipleSelection="YES" rowHeight="159" sectionHeaderHeight="28" sectionFooterHeight="28" id="fj8-U0-D0V">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,6 +98,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="TtW-ui-mWX">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </refreshControl>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bwa-Jq-ruK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -239,6 +242,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FLW-Ja-e5D"/>
+        <segue reference="Ma2-HJ-Qgc"/>
     </inferredMetricsTieBreakers>
 </document>
