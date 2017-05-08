@@ -57,71 +57,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "84"
             endingLineNumber = "84"
-            landmarkName = "handleRefresh(refreshControl:)"
+            landmarkName = "setupTableView()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyRecipe/RecipesTableViewController.swift"
-            timestampString = "515929918.819982"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "recipes"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MyRecipe.RecipesTableViewController.init (style : __C.UITableViewStyle) -&gt; MyRecipe.RecipesTableViewController"
-                  moduleName = "MyRecipe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/toma/Desktop/Swift/MyRecipe/MyRecipe/MyRecipe/RecipesTableViewController.swift"
-                  timestampString = "515930072.242927"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "104">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MyRecipe.RecipesTableViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; MyRecipe.RecipesTableViewController"
-                  moduleName = "MyRecipe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/toma/Desktop/Swift/MyRecipe/MyRecipe/MyRecipe/RecipesTableViewController.swift"
-                  timestampString = "515930072.245377"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "164">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MyRecipe.RecipesTableViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;MyRecipe.RecipesTableViewController&gt;"
-                  moduleName = "MyRecipe"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/toma/Desktop/Swift/MyRecipe/MyRecipe/MyRecipe/RecipesTableViewController.swift"
-                  timestampString = "515930072.247741"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "104">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -136,8 +73,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
             endingLineNumber = "136"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
+            landmarkName = "RecipesTableViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
