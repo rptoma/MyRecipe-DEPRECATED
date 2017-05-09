@@ -29,14 +29,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     
     private var recipes = [Recipe]() {
         didSet {
-            if searchController.isActive == true {
-                recipeRequest()
-            }
-            else {
-                if refreshing == false {
-                    tableView.reloadData()
-                }
-            }
+            tableView.reloadData()
         }
     }
     
@@ -159,12 +152,13 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.isActive {
+        if currentTable == .search {
             return searchRecipes.count
         }
-        else {
+        if currentTable == .recent{
             return recipes.count
         }
+        return 0
     }
     
     private func recipeRequest() {
