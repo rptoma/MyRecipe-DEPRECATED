@@ -70,10 +70,13 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         searchController.searchBar.placeholder = "Search for a recipe"
         
         searchController.searchBar.barTintColor = navigationController?.navigationBar.barTintColor
-        searchController.searchBar.tintColor = UIColor.white
+        searchController.searchBar.tintColor = navigationController?.navigationBar.barTintColor
         searchController.searchBar.isTranslucent = false
         
         searchController.searchBar.backgroundColor = UIColor.black
+        
+        let cancelButtonAttributes: [String: AnyObject] = [NSForegroundColorAttributeName: UIColor.white]
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(cancelButtonAttributes, for: .normal)
         
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
@@ -220,7 +223,9 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         searchRecipes = [Recipe]()
         pageNumberSearch = 1
         pageNumber = 1
-        self.tableView.setContentOffset(CGPoint.init(x: 0, y: -64), animated: true)
+        
+        tableView.setContentOffset(CGPoint.init(x: 0, y: -64), animated: true)
+        
         recipeSearchRequest(query: searchBar.text!) { (error) in
             if error != nil {
                 self.refreshing = false
