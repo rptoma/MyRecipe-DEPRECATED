@@ -188,13 +188,6 @@
                                     <segue destination="pp8-30-yBi" kind="show" identifier="Start and Show Step" id="DI4-zN-FcX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7w-JT-bta">
-                                <rect key="frame" x="16" y="8" width="55" height="30"/>
-                                <state key="normal" title="Favorite"/>
-                                <connections>
-                                    <action selector="favoriteRecipe:" destination="wr8-2Q-7Na" eventType="touchUpInside" id="0DY-QV-Thd"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="81V-oW-HVT">
                                 <rect key="frame" x="16" y="39" width="344" height="479"/>
                                 <subviews>
@@ -256,6 +249,18 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9va-XC-nHI">
+                                <rect key="frame" x="179" y="513" width="19.999999999999545" height="20.000000000000014"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7w-JT-bta">
+                                <rect key="frame" x="330" y="8" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Favorite" image="Like Filled-50"/>
+                                <connections>
+                                    <action selector="favoriteRecipe:" destination="wr8-2Q-7Na" eventType="touchUpInside" id="0DY-QV-Thd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -263,13 +268,12 @@
                             <constraint firstItem="81V-oW-HVT" firstAttribute="centerX" secondItem="ULn-rh-lf1" secondAttribute="centerX" id="Fug-aZ-JIN"/>
                             <constraint firstAttribute="bottom" secondItem="81V-oW-HVT" secondAttribute="bottom" constant="85" id="NGV-DJ-ynn"/>
                             <constraint firstItem="81V-oW-HVT" firstAttribute="top" secondItem="ULn-rh-lf1" secondAttribute="top" constant="39" id="Pa0-sx-wxy"/>
-                            <constraint firstItem="I7w-JT-bta" firstAttribute="leading" secondItem="81V-oW-HVT" secondAttribute="leading" id="UHE-Z4-obc"/>
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="centerX" secondItem="ULn-rh-lf1" secondAttribute="centerX" id="ZkQ-z1-mt7"/>
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="top" secondItem="81V-oW-HVT" secondAttribute="bottom" constant="21" id="j1x-Lk-m5B"/>
-                            <constraint firstItem="I7w-JT-bta" firstAttribute="top" secondItem="t2N-F0-ba0" secondAttribute="bottom" constant="8" symbolic="YES" id="qrJ-jh-zFd"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorView" destination="9va-XC-nHI" id="Xn9-30-uvr"/>
                         <outlet property="descriptionTextView" destination="KcL-dp-7cI" id="IzW-lL-ByX"/>
                         <outlet property="durationTextView" destination="ckg-rb-eeO" id="tje-Yq-7OU"/>
                         <outlet property="ingredientsTextView" destination="YdF-3t-MMJ" id="jFg-F8-fUM"/>
@@ -388,6 +392,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Like Filled-50" width="50" height="50"/>
         <image name="Pause-64" width="48" height="48"/>
         <image name="Recurring Appointment-50" width="50" height="50"/>
     </resources>

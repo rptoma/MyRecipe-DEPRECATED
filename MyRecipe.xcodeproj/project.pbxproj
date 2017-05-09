@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1E6BBE781F81FC166E7D645D /* Pods_MyRecipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0C3901D6CF31EBEFD68E00B /* Pods_MyRecipe.framework */; };
-		E22D1DE11EB8FDB4009FFF6B /* FavoritesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22D1DE01EB8FDB4009FFF6B /* FavoritesTableTableViewController.swift */; };
 		E24DCDF51EBA370C0090D4BC /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24DCDF41EBA370C0090D4BC /* FavoriteTableViewCell.swift */; };
 		E29A79431EA549C80075E29C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79421EA549C80075E29C /* AppDelegate.swift */; };
 		E29A79481EA549C80075E29C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E29A79461EA549C80075E29C /* Main.storyboard */; };
@@ -20,6 +19,7 @@
 		E29A795E1EA54AE10075E29C /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79581EA54AE10075E29C /* RequestManager.swift */; };
 		E29A795F1EA54AE10075E29C /* TimeConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A79591EA54AE10075E29C /* TimeConverter.swift */; };
 		E2DAAAE31EA7A49E00A279F5 /* RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DAAAE21EA7A49E00A279F5 /* RecipeDetailViewController.swift */; };
+		E6367BA21EC1920900A8D0F0 /* FavoritesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6367BA11EC1920900A8D0F0 /* FavoritesTableTableViewController.swift */; };
 		E640F3771EBB8727004D6837 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E640F3761EBB8727004D6837 /* Base.swift */; };
 		E640F3781EBB8997004D6837 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0EF0B1EB8F6BE00DDD549 /* CoreDataManager.swift */; };
 		E69262D31EADF18E00AF7431 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69262D21EADF18E00AF7431 /* AudioToolbox.framework */; };
@@ -38,7 +38,6 @@
 		74152304F1EB30D9C4D8CC00 /* Pods-MyRecipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRecipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-MyRecipe/Pods-MyRecipe.release.xcconfig"; sourceTree = "<group>"; };
 		C0C3901D6CF31EBEFD68E00B /* Pods_MyRecipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyRecipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0FA1703C51F4091356D1C91 /* Pods-MyRecipe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyRecipe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MyRecipe/Pods-MyRecipe.debug.xcconfig"; sourceTree = "<group>"; };
-		E22D1DE01EB8FDB4009FFF6B /* FavoritesTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableTableViewController.swift; sourceTree = "<group>"; };
 		E24DCDF41EBA370C0090D4BC /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		E29A793F1EA549C80075E29C /* MyRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E29A79421EA549C80075E29C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		E29A79591EA54AE10075E29C /* TimeConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeConverter.swift; sourceTree = "<group>"; };
 		E2D0EF0B1EB8F6BE00DDD549 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E2DAAAE21EA7A49E00A279F5 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
+		E6367BA11EC1920900A8D0F0 /* FavoritesTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FavoritesTableTableViewController.swift; path = ../../../MyRecipe/MyRecipe/FavoritesTableTableViewController.swift; sourceTree = "<group>"; };
 		E640F3761EBB8727004D6837 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		E69262D21EADF18E00AF7431 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E69262D41EADF19600AF7431 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -165,6 +165,7 @@
 		E29A79621EA54B190075E29C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E6367BA11EC1920900A8D0F0 /* FavoritesTableTableViewController.swift */,
 				E2DAAAE21EA7A49E00A279F5 /* RecipeDetailViewController.swift */,
 				E29A79561EA54AE10075E29C /* RecipesTableViewController.swift */,
 				E6DF23A71EAB6CAD00164CFC /* RecipeStepViewController.swift */,
@@ -346,7 +347,7 @@
 				E29A79431EA549C80075E29C /* AppDelegate.swift in Sources */,
 				E29A795F1EA54AE10075E29C /* TimeConverter.swift in Sources */,
 				E640F3781EBB8997004D6837 /* CoreDataManager.swift in Sources */,
-				E22D1DE11EB8FDB4009FFF6B /* FavoritesTableTableViewController.swift in Sources */,
+				E6367BA21EC1920900A8D0F0 /* FavoritesTableTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

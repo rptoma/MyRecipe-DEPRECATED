@@ -17,19 +17,22 @@ class RecipeDetailViewController: UIViewController {
     
     @IBOutlet weak var ingredientsTextView: UITextView!
     
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     
     var recipe: Recipe!
     let requestManager = RequestManager()
     var recipeSteps = [RecipeStep]()
+    var gotSteps:Bool = false
+    var gotDescription:Bool = false
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor.white
         customizeStartButton()
-        recipeStepsRequest()
-        recipeDescriptionRequest()
+        
+        makeRequests()
         
         
         
@@ -75,6 +78,7 @@ class RecipeDetailViewController: UIViewController {
     */
 
     func customizeStartButton(){
+        self.startButton.isUserInteractionEnabled = false
         let attributedString = NSMutableAttributedString(string:"Start cooking")
         attributedString.addAttribute(NSKernAttributeName, value: CGFloat(-10.0), range: NSRange(location:0, length:attributedString.length))
         self.startButton.setAttributedTitle(attributedString, for: UIControlState.disabled)
@@ -82,13 +86,28 @@ class RecipeDetailViewController: UIViewController {
         self.startButton.layer.cornerRadius = 10
     }
     
+    func makeRequests(){
+        activityIndicatorView.startAnimating()
+        recipeStepsRequest()
+        recipeDescriptionRequest()
+    }
+    
+    func notifyIndicator(){
+        if gotDescription == true && gotSteps == true{
+            activityIndicatorView.stopAnimating()
+            startButton.isUserInteractionEnabled = true
+        }
+    }
+    
     func recipeStepsRequest(){
         
         requestManager.requestRecipeSteps(forRecipe: recipe.uid!) { (result, error) in
             if error == nil {
                 print("made steps request for recipe \(self.recipe.uid!) with name: \(self.recipe.name!)")
+                self.gotSteps = true
                 self.recipeSteps = result!
-            }
+                self.notifyIndicator()
+        }
             else {
                 print(error!)
             }
@@ -101,8 +120,9 @@ class RecipeDetailViewController: UIViewController {
         requestManager.requestRecipeDesctiption(forUID: recipe.uid!) { (result, error) in
             if error == nil {
                 print("made steps request for recipe \(self.recipe.uid!) with name: \(self.recipe.name!)")
-                
+                self.gotDescription = true
                 self.updateDetailView(recipeDescription: result!)
+                self.notifyIndicator()
                 
             }
             else {
@@ -112,13 +132,15 @@ class RecipeDetailViewController: UIViewController {
     }
     
     func updateDetailView(recipeDescription:RecipeDescription){
-        descriptionTextView.text = recipeDescription.recipeDescription
-        durationTextView.text = TimeConverter.getTime(from: recipeDescription.duration!)
-        var ingredientsList:String = String()
-        for ingredient in recipeDescription.ingredients{
-                ingredientsList = ingredientsList + "\(ingredient.name!) - \(Int(ingredient.quantity!)) \(ingredient.unit!) \n"
+        DispatchQueue.main.async {
+            self.descriptionTextView.text = recipeDescription.recipeDescription
+            self.durationTextView.text = TimeConverter.getTime(from: recipeDescription.duration!)
+            var ingredientsList:String = String()
+            for ingredient in recipeDescription.ingredients{
+                    ingredientsList = ingredientsList + "\(ingredient.name!) - \(Int(ingredient.quantity!)) \(ingredient.unit!) \n"
+            }
+            self.ingredientsTextView.text = ingredientsList
         }
-        ingredientsTextView.text = ingredientsList
     }
     
 }

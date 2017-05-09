@@ -41,30 +41,15 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.openEarsEventsObserver.delegate = self
-        
         nextButtonOutlet.layer.cornerRadius = 10
-        
         updateTask()
-        
-        AVAudioSession.sharedInstance().requestRecordPermission () {
-            [unowned self] allowed in
-            if allowed {
-                self.createVoiceRecognition()
-                // Microphone allowed, do what you like!
-                
-            } else {
-                // User denied microphone. Tell them off!
-                
-            }
-        }
+        createAudioSession()
         
     }
     
     @IBAction func nextButtonAction(_ sender: Any) {
         updateTask()
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -100,6 +85,20 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
         
         if Swift.abs(Int(recognitionScore)!) < 70000 {
             nextButtonAction((Any).self)
+        }
+    }
+    
+    func createAudioSession(){
+        AVAudioSession.sharedInstance().requestRecordPermission () {
+            [unowned self] allowed in
+            if allowed {
+                self.createVoiceRecognition()
+                // Microphone allowed, do what you like!
+                
+            } else {
+                // User denied microphone. Tell them off!
+                
+            }
         }
     }
     
@@ -150,6 +149,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
             speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
         }
     }
+    
     func pauseTaskDescription(){
         
         if pauseEnabler == true{
@@ -159,6 +159,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
             speechSynthesizer.continueSpeaking()
         }
     }
+    
     func replayTaskDescription(){
         let speechUtterance = AVSpeechUtterance(string: taskDescriptionView.text)
         speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
