@@ -65,14 +65,19 @@ class FavoritesTableTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! FavoriteTableViewCell
+        if cell.recipe != nil {
+            performSegue(withIdentifier: "Show Recipe Detail", sender: cell)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
             case "Show Recipe Detail":
-                if let indexPath = tableView.indexPath(for: sender as! FavoriteTableViewCell) {
-                    print(indexPath.row)
+                if tableView.indexPath(for: sender as! FavoriteTableViewCell) != nil {
                     if let vc = segue.destination as? RecipeDetailViewController {
-                        print(indexPath.row)
                         if let sender = sender as? FavoriteTableViewCell {
                             vc.recipe = sender.recipe
                         }
@@ -81,6 +86,19 @@ class FavoritesTableTableViewController: UITableViewController {
             default:
                 break
             }
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            do {
+                try coreDataManager.deleteFavorite(forUID: favorites[indexPath.row].uid!)
+                favorites.remove(at: indexPath.row)
+            }
+            catch {
+                print("Delete error")
+            }
+            tableView.reloadData()
         }
     }
 }
