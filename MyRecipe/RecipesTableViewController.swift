@@ -128,7 +128,6 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
         
-        print(currentTable)
         if currentTable == .recent {
             if indexPath.row < recipes.count && recipes.count != 0 {
                 cell.loadRecipePreview(recipe: recipes[indexPath.row])
@@ -193,10 +192,15 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        tableView.setContentOffset(CGPoint.init(x: 0, y: 0 - searchController.searchBar.bounds.maxY - ((navigationController?.navigationBar.bounds.maxY) ?? 0)), animated: false)
         pageNumberSearch = 1
         pageNumber = 1
-        recipes = [Recipe]()
+        
+        if currentTable != .recent {
+            tableView.setContentOffset(CGPoint.init(x: 0, y: 0 - searchController.searchBar.bounds.maxY - ((navigationController?.navigationBar.bounds.maxY) ?? 0)), animated: false)
+            recipes = [Recipe]()
+            recipeRequest()
+            tableView.reloadData()
+        }
         
         currentTable = .recent
         
@@ -219,14 +223,6 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
             }
         }
         self.refreshControl = nil
-    }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        
     }
     
     override func didReceiveMemoryWarning() {
