@@ -29,7 +29,9 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     
     private var recipes = [Recipe]() {
         didSet {
-            tableView.reloadData()
+            if refreshing == false {
+                tableView.reloadData()
+            }
         }
     }
     
@@ -137,9 +139,11 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
             }
         }
         else  if currentTable == .search {
-            cell.loadRecipePreview(recipe: searchRecipes[indexPath.row])
-            if nearSearchRowUpdate(currentIndexPath: indexPath) {
-                recipeSearchRequest(query: searchController.searchBar.text!, completionHandler: nil)
+            if refreshing == false {
+                cell.loadRecipePreview(recipe: searchRecipes[indexPath.row])
+                if nearSearchRowUpdate(currentIndexPath: indexPath) {
+                    recipeSearchRequest(query: searchController.searchBar.text!, completionHandler: nil)
+                }
             }
         }
         
@@ -199,7 +203,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
             tableView.setContentOffset(CGPoint.init(x: 0, y: 0 - searchController.searchBar.bounds.maxY - ((navigationController?.navigationBar.bounds.maxY) ?? 0)), animated: false)
             recipes = [Recipe]()
             recipeRequest()
-            tableView.reloadData()
+            //tableView.reloadData()
         }
         
         currentTable = .recent
@@ -209,13 +213,14 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
         currentTable = .search
         refreshing = true
-        
+
         searchRecipes = [Recipe]()
         pageNumberSearch = 1
         pageNumber = 1
-        
+        self.tableView.setContentOffset(CGPoint.init(x: 0, y: -64), animated: true)
         recipeSearchRequest(query: searchBar.text!) { (error) in
             if error != nil {
                 self.refreshing = false
