@@ -10,6 +10,13 @@ import UIKit
 
 class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     
+    enum Table {
+        case recent
+        case search
+    }
+    
+    var currentTable = Table.recent
+    
     private var refreshing = false
     
     private let searchController = UISearchController(searchResultsController: nil)
@@ -102,10 +109,10 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
                     print(indexPath.row)
                     if let vc = segue.destination as? RecipeDetailViewController {
                         //print(indexPath.row)
-                        if searchController.isActive == true {
+                        if currentTable == .search {
                             vc.recipe = searchRecipes[indexPath.row]
                         }
-                        else {
+                        else if currentTable == .recent {
                             vc.recipe = recipes[indexPath.row]
                         }
                     }
@@ -128,7 +135,8 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
         
-        if searchController.isActive == false {
+        print(currentTable)
+        if currentTable == .recent {
             if indexPath.row < recipes.count && recipes.count != 0 {
                 cell.loadRecipePreview(recipe: recipes[indexPath.row])
                 if nearRowUpdate(currentIndexPath: indexPath) {
@@ -136,7 +144,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
                 }
             }
         }
-        else {
+        else  if currentTable == .search {
             cell.loadRecipePreview(recipe: searchRecipes[indexPath.row])
             if nearSearchRowUpdate(currentIndexPath: indexPath) {
                 recipeSearchRequest(query: searchController.searchBar.text!, completionHandler: nil)
@@ -195,12 +203,17 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         pageNumberSearch = 1
         pageNumber = 1
         recipes = [Recipe]()
+        
+        currentTable = .recent
+        
         self.refreshControl = UIRefreshControl()
         setupRefreshControl()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        currentTable = .search
         refreshing = true
+        
         searchRecipes = [Recipe]()
         pageNumberSearch = 1
         pageNumber = 1
@@ -215,13 +228,11 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        tableView.isScrollEnabled = false
-        tableView.allowsSelection = false
+        
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        tableView.isScrollEnabled = true
-        tableView.allowsSelection = true
+        
     }
     
     override func didReceiveMemoryWarning() {

@@ -16,6 +16,7 @@ class RecipeDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor.white
+        print(recipe!)
     }
 
     @IBAction func favoriteRecipe(_ sender: UIButton) {
