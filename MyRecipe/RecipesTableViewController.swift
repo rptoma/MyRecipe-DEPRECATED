@@ -59,7 +59,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         pageNumber = 1
         pageNumberSearch = 1
         
-        recipeRequest()
+        recipeRequest(completionHandler: nil)
     }
     
     private func setupSearchBar() {
@@ -95,8 +95,9 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         refreshing = true
         recipes = [Recipe]()
         pageNumber = 1
-        recipeRequest()
-        refreshControl.endRefreshing()
+        recipeRequest() { (error) in
+            refreshControl.endRefreshing()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -137,7 +138,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
             if indexPath.row < recipes.count && recipes.count != 0 {
                 cell.loadRecipePreview(recipe: recipes[indexPath.row])
                 if nearRowUpdate(currentIndexPath: indexPath) {
-                    recipeRequest()
+                    recipeRequest(completionHandler: nil)
                 }
             }
         }
@@ -167,7 +168,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         return 0
     }
     
-    private func recipeRequest() {
+    private func recipeRequest(completionHandler: ((_ error: String?) -> ())?) {
         requestManager.requestRecipes(forPage: pageNumber) { (result, error) in
             if error == nil {
                 print("made list request for page \(self.pageNumber)")
@@ -180,6 +181,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
             else {
                 print(error ?? "unknown error")
             }
+            completionHandler?(error)
         }
     }
     
@@ -205,7 +207,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         if currentTable != .recent {
             tableView.setContentOffset(CGPoint.init(x: 0, y: 0 - searchController.searchBar.bounds.maxY - ((navigationController?.navigationBar.bounds.maxY) ?? 0)), animated: false)
             recipes = [Recipe]()
-            recipeRequest()
+            recipeRequest(completionHandler: nil)
             //tableView.reloadData()
         }
         
