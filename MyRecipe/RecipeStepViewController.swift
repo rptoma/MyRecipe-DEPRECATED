@@ -33,20 +33,24 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
     
     var openEarsEventsObserver = OEEventsObserver()
     let speechSynthesizer = AVSpeechSynthesizer()
+    var recognitionStopped = false
     
     var pauseEnabler = false
     var taskCounter:Int = 0
     var recipeSteps:[RecipeStep] = [RecipeStep]()
+    let notificationCenter = NotificationCenter.default
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setNotificationCenter()
         self.openEarsEventsObserver.delegate = self
         nextButtonOutlet.layer.cornerRadius = 10
         updateTask()
         createAudioSession()
         
     }
-    
+
     @IBAction func nextButtonAction(_ sender: Any) {
         updateTask()
     }
@@ -80,8 +84,51 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
         }
     }
     
+    func setNotificationCenter(){
+        notificationCenter.addObserver(self, selector: #selector(appMovedToResignActive), name: NSNotification.Name.UIApplicationWillResignActive, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appMovedFromResignActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: NSNotification.Name.UIApplicationDidEnterBackground, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(appMovedFromBackground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+    }
+    
+    func appMovedFromBackground(){
+        
+        if recognitionStopped == true{
+            recognitionStopped = false
+            createAudioSession()
+        }
+        
+    }
+    
+    func appMovedToBackground(){
+        
+        OEPocketsphinxController.sharedInstance().suspendRecognition()
+        OEPocketsphinxController.sharedInstance().stopListening()
+    
+    }
+    func appMovedFromResignActive(){
+        
+        if recognitionStopped == true{
+            recognitionStopped = false
+            createAudioSession()
+        }
+        
+        
+    }
+    
+    func appMovedToResignActive(){
+        
+        OEPocketsphinxController.sharedInstance().suspendRecognition()
+        OEPocketsphinxController.sharedInstance().stopListening()
+        
+    }
+    
+    func pocketsphinxDidStopListening() {
+        recognitionStopped = true
+    }
+    
     func pocketsphinxDidReceiveHypothesis(_ hypothesis: String!, recognitionScore: String!, utteranceID: String!) { // Something was heard
-        print("Local callback: The received hypothesis is \(hypothesis!) with a score of \(recognitionScore!) and an ID of \(utteranceID!)" + "Asta-i tinta!")
+        //print("Local callback: The received hypothesis is \(hypothesis!) with a score of \(recognitionScore!) and an ID of \(utteranceID!)" + "Asta-i tinta!")
         
         if Swift.abs(Int(recognitionScore)!) < 70000 {
             nextButtonAction((Any).self)
@@ -89,17 +136,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
     }
     
     func createAudioSession(){
-        AVAudioSession.sharedInstance().requestRecordPermission () {
-            [unowned self] allowed in
-            if allowed {
-                self.createVoiceRecognition()
-                // Microphone allowed, do what you like!
-                
-            } else {
-                // User denied microphone. Tell them off!
-                
-            }
-        }
+        self.createVoiceRecognition()
     }
     
     func createVoiceRecognition(){
@@ -119,7 +156,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
     }
     
     func enableVoiceRecognition(path1:String, path2:String){
-         OELogging.startOpenEarsLogging() //Uncomment to receive full OpenEars logging in case of any unexpected results.
+        // OELogging.startOpenEarsLogging() //Uncomment to receive full OpenEars logging in case of any unexpected results.
         do {
             try OEPocketsphinxController.sharedInstance().setActive(true) // Setting the shared OEPocketsphinxController active is necessary before any of its properties are accessed.
         } catch {
