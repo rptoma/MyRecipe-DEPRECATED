@@ -46,6 +46,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
         setNotificationCenter()
         self.openEarsEventsObserver.delegate = self
         nextButtonOutlet.layer.cornerRadius = 10
+        nextButtonOutlet.addTextSpacing()
         updateTask()
         createAudioSession()
         

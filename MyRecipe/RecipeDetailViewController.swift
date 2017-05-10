@@ -80,10 +80,12 @@ class RecipeDetailViewController: UIViewController {
     func customizeStartButton(){
         self.startButton.isUserInteractionEnabled = false
         let attributedString = NSMutableAttributedString(string:"Start cooking")
-        attributedString.addAttribute(NSKernAttributeName, value: CGFloat(-10.0), range: NSRange(location:0, length:attributedString.length))
+
         self.startButton.setAttributedTitle(attributedString, for: UIControlState.disabled)
         
         self.startButton.layer.cornerRadius = 10
+        
+        startButton.addTextSpacing()
     }
     
     func makeRequests(){
@@ -142,5 +144,4 @@ class RecipeDetailViewController: UIViewController {
             self.ingredientsTextView.text = ingredientsList
         }
     }
-    
 }
