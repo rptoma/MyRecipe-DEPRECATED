@@ -38,6 +38,7 @@ class CoreDataManager {
         let context = appDelegate.persistentContainer.viewContext
         let favorite = Favorite(context: context)
         favorite.uid = uid
+        
         do {
             try context.save()
             print("saved")

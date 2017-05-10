@@ -10,6 +10,13 @@ import UIKit
 
 class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     
+    enum Table {
+        case recent
+        case search
+    }
+    
+    var currentTable = Table.recent
+    
     private var refreshing = false
     
     private let searchController = UISearchController(searchResultsController: nil)
@@ -22,13 +29,8 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     
     private var recipes = [Recipe]() {
         didSet {
-            if searchController.isActive == true {
-                recipeRequest()
-            }
-            else {
-                if refreshing == false {
-                    tableView.reloadData()
-                }
+            if refreshing == false {
+                tableView.reloadData()
             }
         }
     }
@@ -57,7 +59,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         pageNumber = 1
         pageNumberSearch = 1
         
-        recipeRequest()
+        recipeRequest(completionHandler: nil)
     }
     
     private func setupSearchBar() {
@@ -68,10 +70,13 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         searchController.searchBar.placeholder = "Search for a recipe"
         
         searchController.searchBar.barTintColor = navigationController?.navigationBar.barTintColor
-        searchController.searchBar.tintColor = UIColor.white
+        searchController.searchBar.tintColor = navigationController?.navigationBar.barTintColor
         searchController.searchBar.isTranslucent = false
         
         searchController.searchBar.backgroundColor = UIColor.black
+        
+        let cancelButtonAttributes: [String: AnyObject] = [NSForegroundColorAttributeName: UIColor.white]
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(cancelButtonAttributes, for: .normal)
         
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
@@ -90,8 +95,9 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         refreshing = true
         recipes = [Recipe]()
         pageNumber = 1
-        recipeRequest()
-        refreshControl.endRefreshing()
+        recipeRequest() { (error) in
+            refreshControl.endRefreshing()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -102,10 +108,10 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
                     print(indexPath.row)
                     if let vc = segue.destination as? RecipeDetailViewController {
                         //print(indexPath.row)
-                        if searchController.isActive == true {
+                        if currentTable == .search {
                             vc.recipe = searchRecipes[indexPath.row]
                         }
-                        else {
+                        else if currentTable == .recent {
                             vc.recipe = recipes[indexPath.row]
                         }
                     }
@@ -128,18 +134,20 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! RecipeTableViewCell
         
-        if searchController.isActive == false {
+        if currentTable == .recent {
             if indexPath.row < recipes.count && recipes.count != 0 {
                 cell.loadRecipePreview(recipe: recipes[indexPath.row])
                 if nearRowUpdate(currentIndexPath: indexPath) {
-                    recipeRequest()
+                    recipeRequest(completionHandler: nil)
                 }
             }
         }
-        else {
-            cell.loadRecipePreview(recipe: searchRecipes[indexPath.row])
-            if nearSearchRowUpdate(currentIndexPath: indexPath) {
-                recipeSearchRequest(query: searchController.searchBar.text!, completionHandler: nil)
+        else  if currentTable == .search {
+            if refreshing == false {
+                cell.loadRecipePreview(recipe: searchRecipes[indexPath.row])
+                if nearSearchRowUpdate(currentIndexPath: indexPath) {
+                    recipeSearchRequest(query: searchController.searchBar.text!, completionHandler: nil)
+                }
             }
         }
         
@@ -151,15 +159,16 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searchController.isActive {
+        if currentTable == .search {
             return searchRecipes.count
         }
-        else {
+        if currentTable == .recent{
             return recipes.count
         }
+        return 0
     }
     
-    private func recipeRequest() {
+    private func recipeRequest(completionHandler: ((_ error: String?) -> ())?) {
         requestManager.requestRecipes(forPage: pageNumber) { (result, error) in
             if error == nil {
                 print("made list request for page \(self.pageNumber)")
@@ -172,6 +181,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
             else {
                 print(error ?? "unknown error")
             }
+            completionHandler?(error)
         }
     }
     
@@ -191,19 +201,32 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        tableView.setContentOffset(CGPoint.init(x: 0, y: 0 - searchController.searchBar.bounds.maxY - ((navigationController?.navigationBar.bounds.maxY) ?? 0)), animated: false)
         pageNumberSearch = 1
         pageNumber = 1
-        recipes = [Recipe]()
+        
+        if currentTable != .recent {
+            tableView.setContentOffset(CGPoint.init(x: 0, y: 0 - searchController.searchBar.bounds.maxY - ((navigationController?.navigationBar.bounds.maxY) ?? 0)), animated: false)
+            recipes = [Recipe]()
+            recipeRequest(completionHandler: nil)
+            //tableView.reloadData()
+        }
+        
+        currentTable = .recent
+        
         self.refreshControl = UIRefreshControl()
         setupRefreshControl()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        currentTable = .search
         refreshing = true
+
         searchRecipes = [Recipe]()
         pageNumberSearch = 1
         pageNumber = 1
+        
+        tableView.setContentOffset(CGPoint.init(x: 0, y: -64), animated: true)
         
         recipeSearchRequest(query: searchBar.text!) { (error) in
             if error != nil {
@@ -212,16 +235,6 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
             }
         }
         self.refreshControl = nil
-    }
-    
-    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        tableView.isScrollEnabled = false
-        tableView.allowsSelection = false
-    }
-    
-    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        tableView.isScrollEnabled = true
-        tableView.allowsSelection = true
     }
     
     override func didReceiveMemoryWarning() {
