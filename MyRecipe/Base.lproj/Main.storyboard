@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IZA-Mi-Uu7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IZA-Mi-Uu7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -121,7 +121,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8e6-nM-rdA" id="Qer-wD-ws6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b29-jE-Y2h">
@@ -174,84 +174,28 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="81V-oW-HVT">
-                                <rect key="frame" x="16" y="39" width="344" height="479"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Nan-wD-XAQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="344" height="287.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WY1-rz-J9B">
-                                                <rect key="frame" x="0.0" y="0.0" width="138.5" height="22"/>
-                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KcL-dp-7cI">
-                                                <rect key="frame" x="0.0" y="22" width="344" height="265.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QiO-M3-WM2">
-                                        <rect key="frame" x="0.0" y="287.5" width="217" height="36"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2S-Ci-jLV">
-                                                <rect key="frame" x="0.0" y="0.0" width="108.5" height="36"/>
-                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" text="30-40 minutes" translatesAutoresizingMaskIntoConstraints="NO" id="ckg-rb-eeO">
-                                                <rect key="frame" x="108.5" y="0.0" width="108.5" height="36"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                    </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PSu-x3-ndw">
-                                        <rect key="frame" x="0.0" y="323.5" width="163" height="155.5"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" ambiguous="YES" text="Ingredients:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwE-KJ-j1d">
-                                                <rect key="frame" x="0.0" y="0.0" width="163" height="22"/>
-                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YdF-3t-MMJ">
-                                                <rect key="frame" x="0.0" y="22" width="163" height="133.5"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <string key="text">Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity</string>
-                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9va-XC-nHI">
-                                <rect key="frame" x="179" y="513" width="19.999999999999545" height="20.000000000000014"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7w-JT-bta">
-                                <rect key="frame" x="330" y="8" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Favorite" image="Like Filled-50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7w-JT-bta">
+                                <rect key="frame" x="319" y="8" width="40" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="59i-4W-Z0i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="♥">
+                                    <color key="titleColor" red="0.58823531870000001" green="0.027450980619999999" blue="0.1215686277" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="favoriteRecipe:" destination="wr8-2Q-7Na" eventType="touchUpInside" id="0DY-QV-Thd"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9va-XC-nHI">
+                                <rect key="frame" x="178" y="515" width="20" height="20"/>
+                            </activityIndicatorView>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbL-gD-g0o">
-                                <rect key="frame" x="126" y="550" width="122" height="32"/>
+                                <rect key="frame" x="127" y="543" width="122" height="40"/>
                                 <color key="backgroundColor" red="0.72156862745098038" green="0.24741970002651215" blue="0.21722738444805145" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="122" id="AOb-T8-Q0q"/>
+                                    <constraint firstAttribute="width" constant="122" id="LLO-Qx-tLH"/>
+                                    <constraint firstAttribute="height" constant="40" id="sHv-AV-JTe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <state key="normal" title="Start cooking">
@@ -261,15 +205,99 @@
                                     <segue destination="pp8-30-yBi" kind="show" identifier="Start and Show Step" id="DI4-zN-FcX"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="sqw-u3-frP">
+                                <rect key="frame" x="22" y="40" width="331" height="434"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="y6U-H8-yZV">
+                                        <rect key="frame" x="0.0" y="0.0" width="331" height="242"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WY1-rz-J9B">
+                                                <rect key="frame" x="0.0" y="0.0" width="331" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="331" id="Bxh-SF-Xu9"/>
+                                                    <constraint firstAttribute="height" constant="22" id="doO-5a-6NY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
+                                                <color key="textColor" white="0.10580949982007344" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcL-dp-7cI">
+                                                <rect key="frame" x="0.0" y="22" width="331" height="220"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="220" id="QGu-Gl-rrr"/>
+                                                </constraints>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate </string>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UU3-lU-rZr">
+                                        <rect key="frame" x="0.0" y="242" width="331" height="36"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2S-Ci-jLV">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="36"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="YjY-yc-1pZ"/>
+                                                    <constraint firstAttribute="height" constant="36" id="ch7-bd-k1Z"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
+                                                <color key="textColor" white="0.1058094998" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="30-40 minutes" translatesAutoresizingMaskIntoConstraints="NO" id="ckg-rb-eeO">
+                                                <rect key="frame" x="80" y="0.0" width="251" height="36"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="SDq-gh-2zj">
+                                        <rect key="frame" x="0.0" y="278" width="331" height="156"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Ingredients:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwE-KJ-j1d">
+                                                <rect key="frame" x="0.0" y="0.0" width="331" height="22"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="22" id="Jo8-Ui-hik"/>
+                                                    <constraint firstAttribute="width" constant="331" id="Rcu-Y8-fDR"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
+                                                <color key="textColor" white="0.1058094998" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdF-3t-MMJ">
+                                                <rect key="frame" x="0.0" y="22" width="331" height="134"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="134" id="qkD-SR-4lM"/>
+                                                </constraints>
+                                                <string key="text">Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity</string>
+                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="81V-oW-HVT" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leadingMargin" id="7oN-Zf-x3b"/>
-                            <constraint firstItem="81V-oW-HVT" firstAttribute="centerX" secondItem="ULn-rh-lf1" secondAttribute="centerX" id="Fug-aZ-JIN"/>
-                            <constraint firstAttribute="bottom" secondItem="81V-oW-HVT" secondAttribute="bottom" constant="85" id="NGV-DJ-ynn"/>
-                            <constraint firstItem="81V-oW-HVT" firstAttribute="top" secondItem="ULn-rh-lf1" secondAttribute="top" constant="39" id="Pa0-sx-wxy"/>
-                            <constraint firstItem="kbL-gD-g0o" firstAttribute="centerX" secondItem="ULn-rh-lf1" secondAttribute="centerX" id="ZkQ-z1-mt7"/>
-                            <constraint firstItem="kbL-gD-g0o" firstAttribute="top" secondItem="81V-oW-HVT" secondAttribute="bottom" constant="32" id="j1x-Lk-m5B"/>
+                            <constraint firstItem="sqw-u3-frP" firstAttribute="centerX" secondItem="ULn-rh-lf1" secondAttribute="centerX" id="7Bg-58-xE3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I7w-JT-bta" secondAttribute="trailing" id="EEh-Tl-h92"/>
+                            <constraint firstItem="FXU-bb-GvC" firstAttribute="top" secondItem="kbL-gD-g0o" secondAttribute="bottom" constant="20" id="FQ6-Bj-hV2"/>
+                            <constraint firstItem="9va-XC-nHI" firstAttribute="centerX" secondItem="ULn-rh-lf1" secondAttribute="centerX" id="LSC-fr-jAx"/>
+                            <constraint firstItem="kbL-gD-g0o" firstAttribute="centerX" secondItem="ULn-rh-lf1" secondAttribute="centerX" id="VrM-ch-HxF"/>
+                            <constraint firstItem="I7w-JT-bta" firstAttribute="top" secondItem="t2N-F0-ba0" secondAttribute="bottom" constant="8" id="bB2-sa-1vo"/>
+                            <constraint firstItem="FXU-bb-GvC" firstAttribute="top" secondItem="sqw-u3-frP" secondAttribute="bottom" constant="129" id="mVU-9h-Old"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sqw-u3-frP" secondAttribute="trailing" constant="6" id="oYd-M9-Kr3"/>
+                            <constraint firstItem="sqw-u3-frP" firstAttribute="top" secondItem="t2N-F0-ba0" secondAttribute="bottom" constant="40" id="vLO-lS-wCo"/>
+                            <constraint firstItem="kbL-gD-g0o" firstAttribute="top" secondItem="9va-XC-nHI" secondAttribute="bottom" constant="8" id="wQq-Wh-lls"/>
+                            <constraint firstItem="sqw-u3-frP" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leadingMargin" constant="6" id="zh1-7i-TGP"/>
                         </constraints>
                     </view>
                     <connections>
@@ -297,65 +325,88 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="Opy-Rk-idx">
-                                <rect key="frame" x="16" y="30" width="343" height="498"/>
+                                <rect key="frame" x="16" y="30" width="343" height="486"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcG-sE-2xL">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="34.5"/>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="30"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="22"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
+                                        <color key="textColor" white="0.1058094998" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KwZ-ax-Scw">
-                                        <rect key="frame" x="0.0" y="45.5" width="343" height="452.5"/>
+                                        <rect key="frame" x="0.0" y="33" width="343" height="453"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalCentering" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PMp-Wa-sf4">
-                                <rect key="frame" x="77" y="536" width="221" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUC-Eh-Riq">
+                                <rect key="frame" x="126" y="543" width="122" height="40"/>
+                                <color key="backgroundColor" red="0.72156862745098038" green="0.24705882352941178" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="122" id="Ftm-9v-8AU"/>
+                                    <constraint firstAttribute="height" constant="40" id="uU0-dQ-oyZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <state key="normal" title="Next step">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonAction:" destination="pp8-30-yBi" eventType="touchUpInside" id="9e5-18-pby"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="NpZ-Cx-GAd">
+                                <rect key="frame" x="256" y="545" width="61" height="36"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r62-DQ-OpX">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                        <state key="normal" image="Recurring Appointment-50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r62-DQ-OpX">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="↻">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="replayAction:" destination="pp8-30-yBi" eventType="touchUpInside" id="Y1Q-GQ-BDQ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUC-Eh-Riq">
-                                        <rect key="frame" x="50" y="9" width="122" height="32"/>
-                                        <color key="backgroundColor" red="0.72156862745098038" green="0.24705882352941178" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="122" id="b9H-sw-tdX"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                        <state key="normal" title="Next">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fL-Lz-QJG">
+                                        <rect key="frame" x="31" y="0.0" width="30" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="| |">
+                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="nextButtonAction:" destination="pp8-30-yBi" eventType="touchUpInside" id="9e5-18-pby"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7fL-Lz-QJG">
-                                        <rect key="frame" x="173" y="1" width="48" height="48"/>
-                                        <state key="normal" image="Pause-64"/>
                                         <connections>
                                             <action selector="pauseAction:" destination="pp8-30-yBi" eventType="touchUpInside" id="65Q-va-1sz"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HG6-2u-dl8">
+                                <rect key="frame" x="88" y="545" width="30" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="←">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonAction:" destination="pp8-30-yBi" eventType="touchUpInside" id="ISv-Lv-v91"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Opy-Rk-idx" secondAttribute="bottom" constant="75" id="6s7-uJ-jO4"/>
-                            <constraint firstItem="Opy-Rk-idx" firstAttribute="trailing" secondItem="6wv-Fj-Uaq" secondAttribute="trailingMargin" id="Ene-gN-bb2"/>
-                            <constraint firstItem="Opy-Rk-idx" firstAttribute="top" secondItem="eRr-Xp-Eue" secondAttribute="bottom" constant="30" id="JZK-ce-ECC"/>
-                            <constraint firstItem="Opy-Rk-idx" firstAttribute="leading" secondItem="6wv-Fj-Uaq" secondAttribute="leadingMargin" id="ex3-CC-dJ5"/>
+                            <constraint firstItem="HUC-Eh-Riq" firstAttribute="leading" secondItem="HG6-2u-dl8" secondAttribute="trailing" constant="8" id="66n-he-dfV"/>
+                            <constraint firstItem="JCy-Al-emj" firstAttribute="top" secondItem="Opy-Rk-idx" secondAttribute="bottom" constant="87" id="9e4-lO-uVN"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Opy-Rk-idx" secondAttribute="leading" id="FfG-DO-o4J"/>
+                            <constraint firstItem="JCy-Al-emj" firstAttribute="top" secondItem="NpZ-Cx-GAd" secondAttribute="bottom" constant="22" id="KBp-LG-LLQ"/>
+                            <constraint firstItem="Opy-Rk-idx" firstAttribute="centerX" secondItem="6wv-Fj-Uaq" secondAttribute="centerX" id="LHz-Iv-1Ud"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Opy-Rk-idx" secondAttribute="trailing" id="UUc-5A-5hB"/>
+                            <constraint firstItem="JCy-Al-emj" firstAttribute="top" secondItem="HG6-2u-dl8" secondAttribute="bottom" constant="22" id="UwH-g9-zfB"/>
+                            <constraint firstItem="HUC-Eh-Riq" firstAttribute="centerX" secondItem="6wv-Fj-Uaq" secondAttribute="centerX" id="bUQ-HC-pXa"/>
+                            <constraint firstItem="NpZ-Cx-GAd" firstAttribute="leading" secondItem="HUC-Eh-Riq" secondAttribute="trailing" constant="8" id="hcD-Oc-qwS"/>
+                            <constraint firstItem="JCy-Al-emj" firstAttribute="top" secondItem="HUC-Eh-Riq" secondAttribute="bottom" constant="20" id="qQd-gO-zRk"/>
+                            <constraint firstItem="Opy-Rk-idx" firstAttribute="top" secondItem="eRr-Xp-Eue" secondAttribute="bottom" constant="30" id="xiC-iU-zAW"/>
                         </constraints>
                     </view>
                     <connections>
@@ -366,7 +417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8m-Q3-qBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3801" y="41"/>
+            <point key="canvasLocation" x="3800.8000000000002" y="40.929535232383813"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="12u-bJ-KSq">
@@ -391,11 +442,6 @@
             <point key="canvasLocation" x="295.19999999999999" y="40.929535232383813"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Like Filled-50" width="50" height="50"/>
-        <image name="Pause-64" width="48" height="48"/>
-        <image name="Recurring Appointment-50" width="50" height="50"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Ma2-HJ-Qgc"/>
     </inferredMetricsTieBreakers>

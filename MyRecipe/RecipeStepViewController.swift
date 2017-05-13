@@ -29,6 +29,9 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
             pauseTaskDescription()
         }
     }
+    @IBAction func backButtonAction(_ sender: Any) {
+        redoTask()
+    }
 
     
     var openEarsEventsObserver = OEEventsObserver()
@@ -45,8 +48,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
         
         setNotificationCenter()
         self.openEarsEventsObserver.delegate = self
-        nextButtonOutlet.layer.cornerRadius = 10
-        nextButtonOutlet.addTextSpacing()
+        nextButtonCustomization()
         updateTask()
         createAudioSession()
         
@@ -83,6 +85,22 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
         else {
             finishMessageAlert()
         }
+    }
+    func redoTask(){
+        if taskCounter > 1 {
+            
+            taskCounter -= 2
+            if taskCounter != recipeSteps.count - 1 {
+                nextButtonOutlet.setTitle("Next step", for: UIControlState.normal)
+            }
+            readTaskDescription(enable: false)
+            taskLabel.text = recipeSteps[taskCounter].task
+            taskDescriptionView.text = recipeSteps[taskCounter].description
+            readTaskDescription(enable: true)
+            pauseEnabler = false
+            taskCounter += 1
+        }
+       
     }
     
     func setNotificationCenter(){
@@ -209,5 +227,10 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
         _ = navigationController?.popViewController(animated: true)
     }
     
+    func nextButtonCustomization(){
+        nextButtonOutlet.layer.cornerRadius = 10
+        nextButtonOutlet.addTextSpacing()
+        nextButtonOutlet.addShadow()
+    }
     
 }

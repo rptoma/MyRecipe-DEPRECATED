@@ -84,7 +84,7 @@ class RecipeDetailViewController: UIViewController {
         self.startButton.setAttributedTitle(attributedString, for: UIControlState.disabled)
         
         self.startButton.layer.cornerRadius = 10
-        
+        startButton.addShadow()
         startButton.addTextSpacing()
     }
     
