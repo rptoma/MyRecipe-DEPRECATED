@@ -31,10 +31,7 @@ class RecipeDetailViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor.white
         customizeStartButton()
-        
         makeRequests()
-        
-        
         
     }
 
@@ -79,11 +76,6 @@ class RecipeDetailViewController: UIViewController {
 
     func customizeStartButton(){
         self.startButton.isUserInteractionEnabled = false
-        let attributedString = NSMutableAttributedString(string:"Start cooking")
-
-        self.startButton.setAttributedTitle(attributedString, for: UIControlState.disabled)
-        
-        self.startButton.layer.cornerRadius = 10
         startButton.addShadow()
         startButton.addTextSpacing()
     }

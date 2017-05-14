@@ -228,7 +228,6 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
     }
     
     func nextButtonCustomization(){
-        nextButtonOutlet.layer.cornerRadius = 10
         nextButtonOutlet.addTextSpacing()
         nextButtonOutlet.addShadow()
     }

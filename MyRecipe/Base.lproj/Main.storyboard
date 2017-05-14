@@ -190,7 +190,7 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9va-XC-nHI">
                                 <rect key="frame" x="178" y="515" width="20" height="20"/>
                             </activityIndicatorView>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbL-gD-g0o">
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbL-gD-g0o">
                                 <rect key="frame" x="127" y="543" width="122" height="40"/>
                                 <color key="backgroundColor" red="0.72156862745098038" green="0.24741970002651215" blue="0.21722738444805145" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -198,9 +198,7 @@
                                     <constraint firstAttribute="height" constant="40" id="sHv-AV-JTe"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                <state key="normal" title="Start cooking">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="Start cooking"/>
                                 <connections>
                                     <segue destination="pp8-30-yBi" kind="show" identifier="Start and Show Step" id="DI4-zN-FcX"/>
                                 </connections>
@@ -343,7 +341,7 @@
                                     </textView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUC-Eh-Riq">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUC-Eh-Riq">
                                 <rect key="frame" x="126" y="543" width="122" height="40"/>
                                 <color key="backgroundColor" red="0.72156862745098038" green="0.24705882352941178" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -351,9 +349,7 @@
                                     <constraint firstAttribute="height" constant="40" id="uU0-dQ-oyZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                <state key="normal" title="Next step">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="Next step"/>
                                 <connections>
                                     <action selector="nextButtonAction:" destination="pp8-30-yBi" eventType="touchUpInside" id="9e5-18-pby"/>
                                 </connections>
