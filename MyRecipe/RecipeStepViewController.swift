@@ -149,9 +149,14 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
     func pocketsphinxDidReceiveHypothesis(_ hypothesis: String!, recognitionScore: String!, utteranceID: String!) { // Something was heard
         //print("Local callback: The received hypothesis is \(hypothesis!) with a score of \(recognitionScore!) and an ID of \(utteranceID!)" + "Asta-i tinta!")
         
-        if Swift.abs(Int(recognitionScore)!) < 70000 {
+        if Swift.abs(Int(recognitionScore)!) < 70000 && hypothesis!=="next"{
             nextButtonAction((Any).self)
         }
+        else if Swift.abs(Int(recognitionScore)!) < 70000 && hypothesis!=="repeat"{
+            replayAction((Any).self)
+        }
+
+        
     }
     
     func createAudioSession(){
@@ -160,7 +165,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
     
     func createVoiceRecognition(){
         let lmGenerator = OELanguageModelGenerator()
-        let words = ["next"] // These can be lowercase, uppercase, or mixed-case.
+        let words = ["next", "repeat"] // These can be lowercase, uppercase, or mixed-case.
         let name = "NameIWantForMyLanguageModelFiles"
         let err: Error! = lmGenerator.generateLanguageModel(from: words, withFilesNamed: name, forAcousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelEnglish"))
         

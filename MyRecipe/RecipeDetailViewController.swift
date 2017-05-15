@@ -13,9 +13,11 @@ class RecipeDetailViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    
     @IBOutlet weak var durationTextView: UITextView!
     
     @IBOutlet weak var ingredientsTextView: UITextView!
+    
     
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
@@ -31,8 +33,8 @@ class RecipeDetailViewController: UIViewController {
         super.viewDidLoad()
         navigationController?.navigationBar.tintColor = UIColor.white
         customizeStartButton()
+       // customizeText()
         makeRequests()
-        
     }
 
     @IBAction func favoriteRecipe(_ sender: UIButton) {
@@ -73,6 +75,11 @@ class RecipeDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+//    func orientation
+//    
+//    func customizeText(){
+//        ingredientsTextView.
+//    }
 
     func customizeStartButton(){
         self.startButton.isUserInteractionEnabled = false
