@@ -9,7 +9,8 @@
 import UIKit
 import AVFoundation
 
-class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
+class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIImagePickerControllerDelegate,
+UINavigationControllerDelegate {
     
     @IBOutlet weak var taskLabel: UILabel!
     @IBOutlet weak var taskDescriptionView: UITextView!
@@ -37,7 +38,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
     var openEarsEventsObserver = OEEventsObserver()
     let speechSynthesizer = AVSpeechSynthesizer()
     var recognitionStopped = false
-    
+    var imageToShare:UIImage!
     var pauseEnabler = false
     var taskCounter:Int = 0
     var recipeSteps:[RecipeStep] = [RecipeStep]()
@@ -192,11 +193,70 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate {
         OEPocketsphinxController.sharedInstance().startListeningWithLanguageModel(atPath: path1, dictionaryAtPath: path2, acousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelEnglish"), languageModelIsJSGF: false)
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageToShare = image
+        }
+        
+        picker.dismiss(animated: true) {
+            self.share()
+        }
+}
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+            picker.dismiss(animated: true) {
+                self.finishMessageAlert()
+            }
+        
+    }
+    
+    func instantiateCamera(){
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+            var imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    
+    func share(){
+        let activityViewController:UIActivityViewController
+        // set up activity view controller
+        activityViewController = UIActivityViewController(activityItems: [imageToShare], applicationActivities: nil)
+            
+        activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.addToReadingList, UIActivityType.assignToContact, UIActivityType.copyToPasteboard, UIActivityType.openInIBooks, UIActivityType.mail, UIActivityType.message, UIActivityType.saveToCameraRoll, UIActivityType.copyToPasteboard, UIActivityType.postToTencentWeibo, UIActivityType.postToFlickr, UIActivityType.postToVimeo, UIActivityType.postToWeibo]
+        
+        activityViewController.completionWithItemsHandler = { (activityType: UIActivityType?, completed: Bool, returnedItems: [Any]?, error: Error?) -> Void in
+            if completed == true {
+                self.backToDetailView()
+            }
+            else {
+                self.finishMessageAlert()
+            }
+        }
+            
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+    }
+    
+    
     func finishMessageAlert(){
-        let alert = UIAlertController(title: "Congratulations!", message: "You have cooked a dish.", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Done", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+        
+        pauseAction((Any).self)
+        let alert = UIAlertController(title: "You've just finished your dish!", message: "Congratulations!\nLet your friends know about the last recipe you've just cooked.", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Share", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+            self.instantiateCamera()
+           
+        }))
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
             self.backToDetailView()
         }))
+        
         self.present(alert, animated: true, completion: nil)
     }
     

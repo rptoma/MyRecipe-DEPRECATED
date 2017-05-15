@@ -64,7 +64,6 @@ class RecipeDetailViewController: UIViewController {
         }
     }
     
-    
 
     /*
     // MARK: - Navigation
@@ -131,6 +130,8 @@ class RecipeDetailViewController: UIViewController {
             }
         }
     }
+    
+    
     
     func updateDetailView(recipeDescription:RecipeDescription){
         DispatchQueue.main.async {
