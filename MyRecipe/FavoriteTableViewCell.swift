@@ -12,7 +12,6 @@ class FavoriteTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
-    var recipe: Recipe?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,4 +24,8 @@ class FavoriteTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    func initLabels(recipe: Recipe?) {
+        nameLabel.text = recipe?.name
+    }
+    
 }

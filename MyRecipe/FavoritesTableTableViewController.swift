@@ -10,9 +10,11 @@ import UIKit
 
 class FavoritesTableTableViewController: UITableViewController {
 
-    let coreDataManager = CoreDataManager()
-    let requestManager = RequestManager()
-    var favorites = [Favorite]()
+    private let coreDataManager = CoreDataManager()
+    private let requestManager = RequestManager()
+    private var favorites = [Favorite]()
+    private var favorieRecipes = [Recipe?]()
+    private var initialLoad = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,19 +49,30 @@ class FavoritesTableTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FavoriteTableViewCell
         
-        requestManager.requestRecipePreview(forUID: favorites[indexPath.row].uid!) { (result, error) in
-            if error == nil {
-                if let result = result {
-                    DispatchQueue.main.async {
-                        cell.indicatorView.stopAnimating()
-                        cell.nameLabel.text = result.name
+        if initialLoad == true {
+            requestManager.requestRecipePreview(forUID: favorites[indexPath.row].uid!) { (result, error) in
+                if error == nil {
+                    if let result = result {
+                        DispatchQueue.main.async {
+                            cell.indicatorView.stopAnimating()
+                            cell.initLabels(recipe: result)
+                        }
                     }
-                    cell.recipe = result
                 }
+                else {
+                    print(error ?? "unknown error")
+                }
+                
+                self.favorieRecipes.append(result)
+
+                if indexPath.row == self.favorites.count - 1 {
+                    self.initialLoad = false
+                }
+                
             }
-            else {
-                print(error ?? "unknown error")
-            }
+        }
+        else {
+            cell.initLabels(recipe: favorieRecipes[indexPath.row])
         }
         
         return cell
@@ -67,7 +80,7 @@ class FavoritesTableTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! FavoriteTableViewCell
-        if cell.recipe != nil {
+        if favorieRecipes[indexPath.row] != nil {
             performSegue(withIdentifier: "Show Recipe Detail", sender: cell)
         }
     }
@@ -76,10 +89,11 @@ class FavoritesTableTableViewController: UITableViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "Show Recipe Detail":
-                if tableView.indexPath(for: sender as! FavoriteTableViewCell) != nil {
-                    if let vc = segue.destination as? RecipeDetailViewController {
-                        if let sender = sender as? FavoriteTableViewCell {
-                            vc.recipe = sender.recipe
+                if let sender = sender as? FavoriteTableViewCell {
+                    let indexPath = tableView.indexPath(for: sender)
+                    if let indexPath = indexPath {
+                        if let vc = segue.destination as? RecipeDetailViewController {
+                            vc.recipe = favorieRecipes[indexPath.row]
                         }
                     }
                 }
@@ -92,13 +106,17 @@ class FavoritesTableTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             do {
+                tableView.beginUpdates()
                 try coreDataManager.deleteFavorite(forUID: favorites[indexPath.row].uid!)
                 favorites.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .left)
             }
             catch {
                 print("Delete error")
             }
-            tableView.reloadData()
+            defer {
+                tableView.endUpdates()
+            }
         }
     }
 }
