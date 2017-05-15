@@ -38,7 +38,7 @@ UINavigationControllerDelegate {
     var openEarsEventsObserver = OEEventsObserver()
     let speechSynthesizer = AVSpeechSynthesizer()
     var recognitionStopped = false
-    var imageToShare:UIImage!
+    var imageToShare:UIImage?
     var pauseEnabler = false
     var taskCounter:Int = 0
     var recipeSteps:[RecipeStep] = [RecipeStep]()
