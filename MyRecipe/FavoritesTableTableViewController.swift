@@ -49,7 +49,7 @@ class FavoritesTableTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! FavoriteTableViewCell
         
-        if initialLoad == true {
+        if initialLoad == true && indexPath.row >= favorieRecipes.count - 1 {
             requestManager.requestRecipePreview(forUID: favorites[indexPath.row].uid!) { (result, error) in
                 if error == nil {
                     if let result = result {
