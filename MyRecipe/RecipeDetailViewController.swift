@@ -10,6 +10,9 @@ import UIKit
 
 class RecipeDetailViewController: UIViewController {
 
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
+    @IBOutlet weak var ingredientsLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
     
@@ -21,6 +24,7 @@ class RecipeDetailViewController: UIViewController {
     
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
+
     
     var recipe: Recipe!
     let requestManager = RequestManager()
@@ -31,9 +35,9 @@ class RecipeDetailViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        hideLabels()
         navigationController?.navigationBar.tintColor = UIColor.white
         customizeStartButton()
-       // customizeText()
         makeRequests()
     }
 
@@ -42,6 +46,7 @@ class RecipeDetailViewController: UIViewController {
             CoreDataManager.init().addFavorite(uid: uid)
         }
     }
+ 
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -50,6 +55,7 @@ class RecipeDetailViewController: UIViewController {
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        self.startButton.pressAnimation()
         if let identifier = segue.identifier {
             switch identifier {
             case "Start and Show Step":
@@ -89,6 +95,7 @@ class RecipeDetailViewController: UIViewController {
         if gotDescription == true && gotSteps == true{
             activityIndicatorView.stopAnimating()
             startButton.isUserInteractionEnabled = true
+            self.revealLabels()
         }
     }
     
@@ -96,7 +103,7 @@ class RecipeDetailViewController: UIViewController {
         
         requestManager.requestRecipeSteps(forRecipe: recipe.uid!) { (result, error) in
             if error == nil {
-                print("made steps request for recipe \(self.recipe.uid!) with name: \(self.recipe.name!)")
+                //print("made steps request for recipe \(self.recipe.uid!) with name: \(self.recipe.name!)")
                 self.gotSteps = true
                 self.recipeSteps = result!
                 self.notifyIndicator()
@@ -112,7 +119,7 @@ class RecipeDetailViewController: UIViewController {
         
         requestManager.requestRecipeDesctiption(forUID: recipe.uid!) { (result, error) in
             if error == nil {
-                print("made steps request for recipe \(self.recipe.uid!) with name: \(self.recipe.name!)")
+                //print("made steps request for recipe \(self.recipe.uid!) with name: \(self.recipe.name!)")
                 self.gotDescription = true
                 self.updateDetailView(recipeDescription: result!)
                 self.notifyIndicator()
@@ -124,6 +131,18 @@ class RecipeDetailViewController: UIViewController {
         }
     }
     
+    func hideLabels(){
+        descriptionLabel.isHidden = true
+        durationLabel.isHidden = true
+        ingredientsLabel.isHidden = true
+    }
+    
+    func revealLabels(){
+        
+        descriptionLabel.isHidden = false
+        durationLabel.isHidden = false
+        ingredientsLabel.isHidden = false
+    }
     
     
     func updateDetailView(recipeDescription:RecipeDescription){

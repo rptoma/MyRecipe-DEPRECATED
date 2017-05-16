@@ -177,7 +177,7 @@
                         <subviews>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbL-gD-g0o">
                                 <rect key="frame" x="129" y="543" width="122" height="40"/>
-                                <color key="backgroundColor" red="0.72156862745098038" green="0.24741970002651215" blue="0.21722738444805145" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.70588235294117641" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="2o7-Zg-24y"/>
                                     <constraint firstAttribute="height" constant="40" id="CkO-0Q-tWf"/>
@@ -199,9 +199,8 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" placeholderIntrinsicWidth="349" placeholderIntrinsicHeight="200" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdF-3t-MMJ">
-                                <rect key="frame" x="16" y="312" width="349" height="121"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity Ingredient 1 - quantity</string>
+                                <rect key="frame" x="16" y="312" width="349" height="193"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -213,16 +212,16 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sv-2F-Iwa">
-                                <rect key="frame" x="16" y="254" width="217" height="36"/>
+                                <rect key="frame" x="16" y="254" width="149" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2S-Ci-jLV">
-                                        <rect key="frame" x="0.0" y="0.0" width="108.5" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="74.5" height="36"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
                                         <color key="textColor" white="0.1058094998" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" scrollEnabled="NO" editable="NO" text="30-40 minutes" translatesAutoresizingMaskIntoConstraints="NO" id="ckg-rb-eeO">
-                                        <rect key="frame" x="108.5" y="0.0" width="108.5" height="36"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="760" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckg-rb-eeO">
+                                        <rect key="frame" x="74.5" y="0.0" width="74.5" height="36"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
@@ -233,7 +232,6 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcL-dp-7cI">
                                 <rect key="frame" x="13" y="74" width="349" height="180"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate . Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </string>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -261,7 +259,7 @@
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="top" secondItem="9va-XC-nHI" secondAttribute="bottom" constant="8" symbolic="YES" id="QnK-jL-um7"/>
                             <constraint firstItem="WY1-rz-J9B" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leadingMargin" id="SSF-Et-sWq"/>
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="centerX" secondItem="9va-XC-nHI" secondAttribute="centerX" id="Tep-yT-Auo"/>
-                            <constraint firstItem="YdF-3t-MMJ" firstAttribute="height" secondItem="ULn-rh-lf1" secondAttribute="height" multiplier="0.2" id="cAH-e2-lLC"/>
+                            <constraint firstItem="YdF-3t-MMJ" firstAttribute="height" secondItem="ULn-rh-lf1" secondAttribute="height" multiplier="0.32" id="cAH-e2-lLC"/>
                             <constraint firstItem="BwE-KJ-j1d" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leading" constant="16" id="cGp-0P-R8h"/>
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="centerX" secondItem="YdF-3t-MMJ" secondAttribute="centerX" id="dMI-Ge-d7h"/>
                             <constraint firstAttribute="bottom" secondItem="kbL-gD-g0o" secondAttribute="bottom" constant="20" symbolic="YES" id="eWw-2V-a4R"/>
@@ -274,8 +272,11 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicatorView" destination="9va-XC-nHI" id="Xn9-30-uvr"/>
+                        <outlet property="descriptionLabel" destination="WY1-rz-J9B" id="rwP-aP-igS"/>
                         <outlet property="descriptionTextView" destination="KcL-dp-7cI" id="IzW-lL-ByX"/>
+                        <outlet property="durationLabel" destination="M2S-Ci-jLV" id="eDs-8M-Iuf"/>
                         <outlet property="durationTextView" destination="ckg-rb-eeO" id="tje-Yq-7OU"/>
+                        <outlet property="ingredientsLabel" destination="BwE-KJ-j1d" id="bgU-9K-I10"/>
                         <outlet property="ingredientsTextView" destination="YdF-3t-MMJ" id="jFg-F8-fUM"/>
                         <outlet property="startButton" destination="kbL-gD-g0o" id="igL-pn-sXu"/>
                     </connections>
@@ -315,9 +316,9 @@
                                     </textView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUC-Eh-Riq">
+                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUC-Eh-Riq">
                                 <rect key="frame" x="126.5" y="543" width="122" height="40"/>
-                                <color key="backgroundColor" red="0.72156862745098038" green="0.24705882352941178" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.72156862749999995" green="0.2470588235" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="Ftm-9v-8AU"/>
                                     <constraint firstAttribute="height" constant="40" id="uU0-dQ-oyZ"/>

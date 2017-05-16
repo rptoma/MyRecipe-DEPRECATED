@@ -30,7 +30,7 @@ UINavigationControllerDelegate {
             pauseTaskDescription()
         }
     }
-    @IBAction func backButtonAction(_ sender: Any) {
+    @IBAction  func backButtonAction(_ sender: Any) {
         redoTask()
     }
 
@@ -56,6 +56,7 @@ UINavigationControllerDelegate {
     }
 
     @IBAction func nextButtonAction(_ sender: Any) {
+        nextButtonOutlet.pressAnimation()
         updateTask()
     }
     
@@ -78,7 +79,7 @@ UINavigationControllerDelegate {
                 nextButtonOutlet.setTitle("Finish", for: UIControlState.normal)
             }
             taskLabel.text = recipeSteps[taskCounter].task
-            taskDescriptionView.text = recipeSteps[taskCounter].description
+            taskDescriptionView.text = recipeSteps[taskCounter].details
             readTaskDescription(enable: true)
             taskCounter += 1
             pauseEnabler = false
@@ -150,13 +151,17 @@ UINavigationControllerDelegate {
     func pocketsphinxDidReceiveHypothesis(_ hypothesis: String!, recognitionScore: String!, utteranceID: String!) { // Something was heard
         //print("Local callback: The received hypothesis is \(hypothesis!) with a score of \(recognitionScore!) and an ID of \(utteranceID!)" + "Asta-i tinta!")
         
-        if Swift.abs(Int(recognitionScore)!) < 70000 && hypothesis!=="next"{
-            nextButtonAction((Any).self)
+        if Swift.abs(Int(recognitionScore)!) < 70000{
+            if hypothesis!=="next"{
+                nextButtonAction((Any).self)
+            }
+            else if hypothesis!=="repeat"{
+                replayAction((Any).self)
+            }
+            else if hypothesis!=="back"{
+                backButtonAction((Any).self)
+            }
         }
-        else if Swift.abs(Int(recognitionScore)!) < 70000 && hypothesis!=="repeat"{
-            replayAction((Any).self)
-        }
-
         
     }
     
@@ -166,7 +171,7 @@ UINavigationControllerDelegate {
     
     func createVoiceRecognition(){
         let lmGenerator = OELanguageModelGenerator()
-        let words = ["next", "repeat"] // These can be lowercase, uppercase, or mixed-case.
+        let words = ["next", "repeat", "back"] // These can be lowercase, uppercase, or mixed-case.
         let name = "NameIWantForMyLanguageModelFiles"
         let err: Error! = lmGenerator.generateLanguageModel(from: words, withFilesNamed: name, forAcousticModelAtPath: OEAcousticModel.path(toModel: "AcousticModelEnglish"))
         
