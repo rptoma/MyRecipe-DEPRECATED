@@ -9,11 +9,9 @@
 import UIKit
 import AVFoundation
 
-class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate {
+class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIImagePickerControllerDelegate{
     
-    @IBOutlet weak var taskLabel: UILabel!
-    @IBOutlet weak var taskDescriptionView: UITextView!
+    @IBOutlet var stepView: StepView!
     @IBOutlet weak var nextButtonOutlet: UIButton!
     
     @IBAction func replayAction(_ sender: Any) {
@@ -56,7 +54,7 @@ UINavigationControllerDelegate {
     }
 
     @IBAction func nextButtonAction(_ sender: Any) {
-        nextButtonOutlet.pressAnimation()
+        
         updateTask()
     }
     
@@ -78,8 +76,7 @@ UINavigationControllerDelegate {
             if taskCounter == recipeSteps.count - 1 {
                 nextButtonOutlet.setTitle("Finish", for: UIControlState.normal)
             }
-            taskLabel.text = recipeSteps[taskCounter].task
-            taskDescriptionView.text = recipeSteps[taskCounter].details
+            stepView.updateViewObject(recipeStep: recipeSteps[taskCounter])
             readTaskDescription(enable: true)
             taskCounter += 1
             pauseEnabler = false
@@ -96,8 +93,7 @@ UINavigationControllerDelegate {
                 nextButtonOutlet.setTitle("Next step", for: UIControlState.normal)
             }
             readTaskDescription(enable: false)
-            taskLabel.text = recipeSteps[taskCounter].task
-            taskDescriptionView.text = recipeSteps[taskCounter].description
+            stepView.updateViewObject(recipeStep: recipeSteps[taskCounter])
             readTaskDescription(enable: true)
             pauseEnabler = false
             taskCounter += 1
@@ -266,7 +262,7 @@ UINavigationControllerDelegate {
     }
     
     func readTaskDescription(enable:Bool){
-        let speechUtterance = AVSpeechUtterance(string: taskDescriptionView.text)
+        let speechUtterance = AVSpeechUtterance(string: self.stepView.taskDescriptionView.text)
         
         if enable == true{
             speechSynthesizer.speak(speechUtterance)
@@ -287,7 +283,7 @@ UINavigationControllerDelegate {
     }
     
     func replayTaskDescription(){
-        let speechUtterance = AVSpeechUtterance(string: taskDescriptionView.text)
+        let speechUtterance = AVSpeechUtterance(string: self.stepView.taskDescriptionView.text)
         speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
         speechSynthesizer.speak(speechUtterance)
         pauseEnabler = false

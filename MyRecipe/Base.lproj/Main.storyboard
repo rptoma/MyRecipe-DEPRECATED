@@ -122,7 +122,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8e6-nM-rdA" id="Qer-wD-ws6">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b29-jE-Y2h">
@@ -171,7 +171,7 @@
                         <viewControllerLayoutGuide type="top" id="t2N-F0-ba0"/>
                         <viewControllerLayoutGuide type="bottom" id="FXU-bb-GvC"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ULn-rh-lf1">
+                    <view key="view" contentMode="scaleToFill" id="ULn-rh-lf1" customClass="DetailView" customModule="MyRecipe" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -269,15 +269,18 @@
                             <constraint firstItem="I7w-JT-bta" firstAttribute="top" secondItem="t2N-F0-ba0" secondAttribute="bottom" constant="7" id="rwv-Gr-fyl"/>
                             <constraint firstItem="KcL-dp-7cI" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leading" constant="13" id="shY-KR-F5O"/>
                         </constraints>
+                        <connections>
+                            <outlet property="descriptionLabel" destination="WY1-rz-J9B" id="fjd-tN-le3"/>
+                            <outlet property="descriptionTextView" destination="KcL-dp-7cI" id="IYn-SV-XR5"/>
+                            <outlet property="durationLabel" destination="M2S-Ci-jLV" id="vmb-V7-2HC"/>
+                            <outlet property="durationTextView" destination="ckg-rb-eeO" id="hjr-7I-ok2"/>
+                            <outlet property="ingredientsLabel" destination="BwE-KJ-j1d" id="DDt-La-Omj"/>
+                            <outlet property="ingredientsTextView" destination="YdF-3t-MMJ" id="ac2-eh-DN2"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="activityIndicatorView" destination="9va-XC-nHI" id="Xn9-30-uvr"/>
-                        <outlet property="descriptionLabel" destination="WY1-rz-J9B" id="rwP-aP-igS"/>
-                        <outlet property="descriptionTextView" destination="KcL-dp-7cI" id="IzW-lL-ByX"/>
-                        <outlet property="durationLabel" destination="M2S-Ci-jLV" id="eDs-8M-Iuf"/>
-                        <outlet property="durationTextView" destination="ckg-rb-eeO" id="tje-Yq-7OU"/>
-                        <outlet property="ingredientsLabel" destination="BwE-KJ-j1d" id="bgU-9K-I10"/>
-                        <outlet property="ingredientsTextView" destination="YdF-3t-MMJ" id="jFg-F8-fUM"/>
+                        <outlet property="detailView" destination="ULn-rh-lf1" id="IvT-wf-BtS"/>
                         <outlet property="startButton" destination="kbL-gD-g0o" id="igL-pn-sXu"/>
                     </connections>
                 </viewController>
@@ -293,7 +296,7 @@
                         <viewControllerLayoutGuide type="top" id="eRr-Xp-Eue"/>
                         <viewControllerLayoutGuide type="bottom" id="JCy-Al-emj"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6wv-Fj-Uaq">
+                    <view key="view" contentMode="scaleToFill" id="6wv-Fj-Uaq" customClass="StepView" customModule="MyRecipe" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -379,11 +382,14 @@
                             <constraint firstItem="JCy-Al-emj" firstAttribute="top" secondItem="HUC-Eh-Riq" secondAttribute="bottom" constant="20" id="qQd-gO-zRk"/>
                             <constraint firstItem="Opy-Rk-idx" firstAttribute="top" secondItem="eRr-Xp-Eue" secondAttribute="bottom" constant="30" id="xiC-iU-zAW"/>
                         </constraints>
+                        <connections>
+                            <outlet property="taskDescriptionView" destination="KwZ-ax-Scw" id="nf1-rV-enB"/>
+                            <outlet property="taskLabel" destination="EcG-sE-2xL" id="eZv-sX-d60"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="nextButtonOutlet" destination="HUC-Eh-Riq" id="ZvZ-Oc-hPT"/>
-                        <outlet property="taskDescriptionView" destination="KwZ-ax-Scw" id="vJ3-cx-EUq"/>
-                        <outlet property="taskLabel" destination="EcG-sE-2xL" id="2Gw-p1-My0"/>
+                        <outlet property="stepView" destination="6wv-Fj-Uaq" id="Q0j-Sj-9nE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G8m-Q3-qBs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -395,7 +401,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IZA-Mi-Uu7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="bCA-AJ-cKU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="bCA-AJ-cKU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.80784313725490198" green="0.20392156862745098" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

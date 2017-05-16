@@ -10,20 +10,11 @@ import UIKit
 
 class RecipeDetailViewController: UIViewController {
 
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var durationLabel: UILabel!
-    @IBOutlet weak var ingredientsLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
-    @IBOutlet weak var descriptionTextView: UITextView!
-    
-    
-    @IBOutlet weak var durationTextView: UITextView!
-    
-    @IBOutlet weak var ingredientsTextView: UITextView!
-    
     
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
+    @IBOutlet var detailView: DetailView!
 
     
     var recipe: Recipe!
@@ -35,7 +26,7 @@ class RecipeDetailViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        hideLabels()
+        self.detailView.hideLabels()
         navigationController?.navigationBar.tintColor = UIColor.white
         customizeStartButton()
         makeRequests()
@@ -55,7 +46,7 @@ class RecipeDetailViewController: UIViewController {
 
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        self.startButton.pressAnimation()
+        
         if let identifier = segue.identifier {
             switch identifier {
             case "Start and Show Step":
@@ -80,6 +71,7 @@ class RecipeDetailViewController: UIViewController {
 */
 
     func customizeStartButton(){
+        startButton.transformButton()
         self.startButton.isUserInteractionEnabled = false
         startButton.addShadow()
         startButton.addTextSpacing()
@@ -95,7 +87,7 @@ class RecipeDetailViewController: UIViewController {
         if gotDescription == true && gotSteps == true{
             activityIndicatorView.stopAnimating()
             startButton.isUserInteractionEnabled = true
-            self.revealLabels()
+            self.detailView.revealLabels()
         }
     }
     
@@ -121,7 +113,7 @@ class RecipeDetailViewController: UIViewController {
             if error == nil {
                 //print("made steps request for recipe \(self.recipe.uid!) with name: \(self.recipe.name!)")
                 self.gotDescription = true
-                self.updateDetailView(recipeDescription: result!)
+                self.detailView.updateDetailViewObjects(recipeDescription: result!)
                 self.notifyIndicator()
                 
             }
@@ -131,29 +123,5 @@ class RecipeDetailViewController: UIViewController {
         }
     }
     
-    func hideLabels(){
-        descriptionLabel.isHidden = true
-        durationLabel.isHidden = true
-        ingredientsLabel.isHidden = true
-    }
-    
-    func revealLabels(){
-        
-        descriptionLabel.isHidden = false
-        durationLabel.isHidden = false
-        ingredientsLabel.isHidden = false
-    }
-    
-    
-    func updateDetailView(recipeDescription:RecipeDescription){
-        DispatchQueue.main.async {
-            self.descriptionTextView.text = recipeDescription.recipeDescription
-            self.durationTextView.text = TimeConverter.getTime(from: recipeDescription.duration!)
-            var ingredientsList:String = String()
-            for ingredient in recipeDescription.ingredients{
-                    ingredientsList = ingredientsList + "\(ingredient.name!) - \(Int(ingredient.quantity!)) \(ingredient.unit!) \n"
-            }
-            self.ingredientsTextView.text = ingredientsList
-        }
-    }
+   
 }

@@ -2,7 +2,7 @@
 //  Favorite+CoreDataClass.swift
 //  
 //
-//  Created by Eduard Radu on 16/05/2017.
+//  Created by Eduard Radu on 17/05/2017.
 //
 //  This file was automatically generated and should not be edited.
 //

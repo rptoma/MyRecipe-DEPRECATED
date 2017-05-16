@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Material
 
 extension UIButton {
     func addTextSpacing() {
@@ -26,20 +27,10 @@ extension UIButton {
         self.layer.shadowRadius = 0.5
         self.layer.shadowOffset = CGSize(width: 0.0, height: 2.5)
     }
-    func pressAnimation(){
+    
+    func transformButton(){
         
-        self.layer.shadowColor = UIColor(red: 180/255.0, green: 50/255.0, blue: 50/255.0, alpha: 1.0).cgColor
-        let when = DispatchTime.now() + 1.0/2
-        DispatchQueue.main.asyncAfter(deadline: when){
-            self.layer.shadowColor = UIColor(red: 100/255.0, green: 0.0, blue: 0.0, alpha: 1.0).cgColor
-        }
-//        self.layer.shadowOpacity = 0.0
-//        let x = self.frame.origin.x
-//        let y = self.frame.origin.y
-//        self.frame.origin = CGPoint(x: x, y: y+2.0)
-//        let when = DispatchTime.now() + 1.0/2
-//        DispatchQueue.main.asyncAfter(deadline: when){
-//             self.layer.shadowOpacity = 1.0
-//        }
+    
     }
+   
 }

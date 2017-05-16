@@ -33,6 +33,8 @@
 		E6F7475F1EBA7B0F00984A1F /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E6F747591EBA796600984A1F /* CoreData.xcdatamodeld */; };
 		E6F747611EBA7BCA00984A1F /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F747601EBA7BCA00984A1F /* Ingredient.swift */; };
 		E6F747631EBA7BEA00984A1F /* RecipeDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6F747621EBA7BEA00984A1F /* RecipeDescription.swift */; };
+		E6FEBDAA1ECB9F360039F4FE /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FEBDA91ECB9F360039F4FE /* DetailView.swift */; };
+		E6FEBDAC1ECBA4AC0039F4FE /* StepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FEBDAB1ECBA4AC0039F4FE /* StepView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,8 @@
 		E6F7475A1EBA796600984A1F /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
 		E6F747601EBA7BCA00984A1F /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		E6F747621EBA7BEA00984A1F /* RecipeDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDescription.swift; sourceTree = "<group>"; };
+		E6FEBDA91ECB9F360039F4FE /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		E6FEBDAB1ECBA4AC0039F4FE /* StepView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +161,8 @@
 			children = (
 				E29A79461EA549C80075E29C /* Main.storyboard */,
 				E29A794B1EA549C80075E29C /* LaunchScreen.storyboard */,
+				E6FEBDA91ECB9F360039F4FE /* DetailView.swift */,
+				E6FEBDAB1ECBA4AC0039F4FE /* StepView.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -303,7 +309,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		210D2FDE438AC1F78FC656B4 /* [CP] Copy Pods Resources */ = {
@@ -344,6 +350,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E640F3771EBB8727004D6837 /* Base.swift in Sources */,
+				E6FEBDAA1ECB9F360039F4FE /* DetailView.swift in Sources */,
 				E6DF23A81EAB6CAD00164CFC /* RecipeStepViewController.swift in Sources */,
 				E29A795B1EA54AE10075E29C /* Recipe.swift in Sources */,
 				E6F747611EBA7BCA00984A1F /* Ingredient.swift in Sources */,
@@ -360,6 +367,7 @@
 				E29A795F1EA54AE10075E29C /* TimeConverter.swift in Sources */,
 				E640F3781EBB8997004D6837 /* CoreDataManager.swift in Sources */,
 				E6367BA21EC1920900A8D0F0 /* FavoritesTableTableViewController.swift in Sources */,
+				E6FEBDAC1ECBA4AC0039F4FE /* StepView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
