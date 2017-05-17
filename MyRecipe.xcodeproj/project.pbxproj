@@ -270,7 +270,7 @@
 				TargetAttributes = {
 					E29A793E1EA549C80075E29C = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = DM9CFZ6VBW;
+						DevelopmentTeam = 27PM32BCW4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -505,14 +505,14 @@
 			baseConfigurationReference = E0FA1703C51F4091356D1C91 /* Pods-MyRecipe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DM9CFZ6VBW;
+				DEVELOPMENT_TEAM = 27PM32BCW4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MyRecipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = alexander.MyRecipe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toma.myrecipe34221321;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = ./MyRecipe/OpenEarsHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -525,14 +525,14 @@
 			baseConfigurationReference = 74152304F1EB30D9C4D8CC00 /* Pods-MyRecipe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = DM9CFZ6VBW;
+				DEVELOPMENT_TEAM = 27PM32BCW4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = MyRecipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = alexander.MyRecipe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toma.myrecipe34221321;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = ./MyRecipe/OpenEarsHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

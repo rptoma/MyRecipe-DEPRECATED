@@ -291,7 +291,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIIm
     
     func createTextToSpeechSession(){
         let speechUtterance = AVSpeechUtterance(string: self.stepView.taskDescriptionView.text)
-        speechUtterance.rate = 0.40
+        speechUtterance.rate = 0.48
         speechSynthesizer.speak(speechUtterance)
         
     }
@@ -303,6 +303,8 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIIm
     func nextButtonCustomization(){
         nextButtonOutlet.addTextSpacing()
         nextButtonOutlet.addColor()
+        nextButtonOutlet.cornerRadius = 0
+        nextButtonOutlet.layer.shadowOpacity = 0
     }
     
 }

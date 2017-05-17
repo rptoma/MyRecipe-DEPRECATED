@@ -84,6 +84,8 @@ class RecipeDetailViewController: UIViewController {
     func customizeStartButton(){
         self.startButton.isUserInteractionEnabled = false
         startButton.addColor()
+        startButton.cornerRadius = 0
+        startButton.layer.shadowOpacity = 0
         startButton.addTextSpacing()
     }
     
