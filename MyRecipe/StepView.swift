@@ -2,7 +2,7 @@
 //  StepView.swift
 //  MyRecipe
 //
-//  Created by Eduard Radu on 17/05/2017.
+//  Created by Alexandru Radu on 17/05/2017.
 //  Copyright © 2017 Toma Radu-Petrescu. All rights reserved.
 //
 

@@ -150,11 +150,11 @@
 				E29A79651EA54B320075E29C /* Data converters */,
 				E29A796A1EA55C3F0075E29C /* Base */,
 				E21FA7541EC3AC3B003BC5D8 /* Extensions */,
+				E65B00241ECCB97700EA308B /* Utilities */,
 				E29A79491EA549C80075E29C /* Assets.xcassets */,
 				E29A79421EA549C80075E29C /* AppDelegate.swift */,
 				E29A794E1EA549C80075E29C /* Info.plist */,
 				E69262D71EADF1D200AF7431 /* OpenEarsHeader.h */,
-				E65B00241ECCB97700EA308B /* Utilities */,
 			);
 			path = MyRecipe;
 			sourceTree = "<group>";
@@ -175,9 +175,9 @@
 			children = (
 				E6F747621EBA7BEA00984A1F /* RecipeDescription.swift */,
 				E6F747601EBA7BCA00984A1F /* Ingredient.swift */,
-				E6F747591EBA796600984A1F /* CoreData.xcdatamodeld */,
 				E29A79551EA54AE10075E29C /* Recipe.swift */,
 				E6B10EEE1EAAA6520010F974 /* RecipeStep.swift */,
+				E6F747591EBA796600984A1F /* CoreData.xcdatamodeld */,
 			);
 			name = Models;
 			sourceTree = "<group>";
