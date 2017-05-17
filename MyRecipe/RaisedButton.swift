@@ -20,7 +20,7 @@ extension RaisedButton {
     func addColor(){
         self.cornerRadius = 0
         self.pulseColor = .white
-        self.backgroundColor = Color.init(red: 180.0/255, green: 50.0/255, blue: 50.0/255, alpha: 1.0)
+        self.backgroundColor = Color.init(red: 206/255, green: 52.0/255, blue: 49.0/255, alpha: 1.0)
     }
    
 }

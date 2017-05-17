@@ -177,7 +177,7 @@
                         <subviews>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbL-gD-g0o" customClass="RaisedButton" customModule="Material">
                                 <rect key="frame" x="129" y="543" width="122" height="40"/>
-                                <color key="backgroundColor" red="0.70588235294117641" green="0.19607843137254902" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.80784313725490198" green="0.20392156862745098" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="2o7-Zg-24y"/>
                                     <constraint firstAttribute="height" constant="40" id="CkO-0Q-tWf"/>
@@ -240,7 +240,7 @@
                                 <rect key="frame" x="335" y="7" width="30" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="♥">
-                                    <color key="titleColor" red="0.58823531870000001" green="0.027450980619999999" blue="0.1215686277" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.80784313725490198" green="0.20392156862745098" blue="0.19215686274509802" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="favoriteRecipe:" destination="wr8-2Q-7Na" eventType="touchUpInside" id="0DY-QV-Thd"/>
@@ -322,7 +322,7 @@
                             </stackView>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUC-Eh-Riq" customClass="RaisedButton" customModule="Material">
                                 <rect key="frame" x="126.5" y="543" width="122" height="40"/>
-                                <color key="backgroundColor" red="0.72156862749999995" green="0.2470588235" blue="0.2156862745" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.80784313730000001" green="0.20392156859999999" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="Ftm-9v-8AU"/>
                                     <constraint firstAttribute="height" constant="40" id="uU0-dQ-oyZ"/>
@@ -402,7 +402,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IZA-Mi-Uu7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="bCA-AJ-cKU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="bCA-AJ-cKU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.80784313725490198" green="0.20392156862745098" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
