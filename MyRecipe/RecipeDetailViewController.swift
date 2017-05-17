@@ -32,6 +32,16 @@ class RecipeDetailViewController: UIViewController {
         customizeStartButton()
         makeRequests()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        AppUtility.lockOrientation(.portrait, andRotateTo: .portrait)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        AppUtility.lockOrientation(.all)
+    }
 
     @IBAction func favoriteRecipe(_ sender: UIButton) {
         if let uid = recipe?.uid {

@@ -188,16 +188,6 @@
                                     <segue destination="pp8-30-yBi" kind="show" identifier="Start and Show Step" id="DI4-zN-FcX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7w-JT-bta">
-                                <rect key="frame" x="8" y="7" width="30" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="♥">
-                                    <color key="titleColor" red="0.58823531870000001" green="0.027450980619999999" blue="0.1215686277" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="favoriteRecipe:" destination="wr8-2Q-7Na" eventType="touchUpInside" id="0DY-QV-Thd"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" placeholderIntrinsicWidth="349" placeholderIntrinsicHeight="200" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdF-3t-MMJ">
                                 <rect key="frame" x="16" y="312" width="349" height="193"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -245,6 +235,16 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9va-XC-nHI">
                                 <rect key="frame" x="180" y="515" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7w-JT-bta">
+                                <rect key="frame" x="335" y="8" width="30" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="♥">
+                                    <color key="titleColor" red="0.58823531870000001" green="0.027450980619999999" blue="0.1215686277" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="favoriteRecipe:" destination="wr8-2Q-7Na" eventType="touchUpInside" id="0DY-QV-Thd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -259,12 +259,12 @@
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="top" secondItem="9va-XC-nHI" secondAttribute="bottom" constant="8" symbolic="YES" id="QnK-jL-um7"/>
                             <constraint firstItem="WY1-rz-J9B" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leadingMargin" id="SSF-Et-sWq"/>
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="centerX" secondItem="9va-XC-nHI" secondAttribute="centerX" id="Tep-yT-Auo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="I7w-JT-bta" secondAttribute="trailing" constant="-6" id="b5G-YN-XhS"/>
                             <constraint firstItem="YdF-3t-MMJ" firstAttribute="height" secondItem="ULn-rh-lf1" secondAttribute="height" multiplier="0.32" id="cAH-e2-lLC"/>
                             <constraint firstItem="BwE-KJ-j1d" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leading" constant="16" id="cGp-0P-R8h"/>
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="centerX" secondItem="YdF-3t-MMJ" secondAttribute="centerX" id="dMI-Ge-d7h"/>
                             <constraint firstAttribute="bottom" secondItem="kbL-gD-g0o" secondAttribute="bottom" constant="20" symbolic="YES" id="eWw-2V-a4R"/>
                             <constraint firstAttribute="trailing" secondItem="YdF-3t-MMJ" secondAttribute="trailing" constant="10" id="fsR-aj-cY1"/>
-                            <constraint firstItem="I7w-JT-bta" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leading" constant="8" id="mJL-Db-xdU"/>
                             <constraint firstItem="2sv-2F-Iwa" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leadingMargin" id="nXq-Kl-KlX"/>
                             <constraint firstItem="I7w-JT-bta" firstAttribute="top" secondItem="t2N-F0-ba0" secondAttribute="bottom" constant="7" id="rwv-Gr-fyl"/>
                             <constraint firstItem="KcL-dp-7cI" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leading" constant="13" id="shY-KR-F5O"/>

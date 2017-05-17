@@ -23,6 +23,7 @@
 		E6367BA21EC1920900A8D0F0 /* FavoritesTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6367BA11EC1920900A8D0F0 /* FavoritesTableTableViewController.swift */; };
 		E640F3771EBB8727004D6837 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = E640F3761EBB8727004D6837 /* Base.swift */; };
 		E640F3781EBB8997004D6837 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D0EF0B1EB8F6BE00DDD549 /* CoreDataManager.swift */; };
+		E65B00231ECCB88A00EA308B /* AppUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E65B00221ECCB88A00EA308B /* AppUtility.swift */; };
 		E69262D31EADF18E00AF7431 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69262D21EADF18E00AF7431 /* AudioToolbox.framework */; };
 		E69262D51EADF19600AF7431 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69262D41EADF19600AF7431 /* AVFoundation.framework */; };
 		E69262D91EADF5A300AF7431 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E69262D81EADF5A300AF7431 /* OpenEars.framework */; };
@@ -58,6 +59,7 @@
 		E2DAAAE21EA7A49E00A279F5 /* RecipeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeDetailViewController.swift; sourceTree = "<group>"; };
 		E6367BA11EC1920900A8D0F0 /* FavoritesTableTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesTableTableViewController.swift; sourceTree = "<group>"; };
 		E640F3761EBB8727004D6837 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		E65B00221ECCB88A00EA308B /* AppUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUtility.swift; sourceTree = "<group>"; };
 		E69262D21EADF18E00AF7431 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E69262D41EADF19600AF7431 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		E69262D71EADF1D200AF7431 /* OpenEarsHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenEarsHeader.h; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				E29A79421EA549C80075E29C /* AppDelegate.swift */,
 				E29A794E1EA549C80075E29C /* Info.plist */,
 				E69262D71EADF1D200AF7431 /* OpenEarsHeader.h */,
+				E65B00241ECCB97700EA308B /* Utilities */,
 			);
 			path = MyRecipe;
 			sourceTree = "<group>";
@@ -222,6 +225,14 @@
 				E640F3761EBB8727004D6837 /* Base.swift */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		E65B00241ECCB97700EA308B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E65B00221ECCB88A00EA308B /* AppUtility.swift */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -354,6 +365,7 @@
 				E6DF23A81EAB6CAD00164CFC /* RecipeStepViewController.swift in Sources */,
 				E29A795B1EA54AE10075E29C /* Recipe.swift in Sources */,
 				E6F747611EBA7BCA00984A1F /* Ingredient.swift in Sources */,
+				E65B00231ECCB88A00EA308B /* AppUtility.swift in Sources */,
 				E29A795D1EA54AE10075E29C /* RecipeTableViewCell.swift in Sources */,
 				E2DAAAE31EA7A49E00A279F5 /* RecipeDetailViewController.swift in Sources */,
 				E6F7475F1EBA7B0F00984A1F /* CoreData.xcdatamodeld in Sources */,

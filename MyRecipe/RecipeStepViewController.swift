@@ -263,10 +263,9 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIIm
     }
     
     func readTaskDescription(enable:Bool){
-        let speechUtterance = AVSpeechUtterance(string: self.stepView.taskDescriptionView.text)
         
         if enable == true{
-            speechSynthesizer.speak(speechUtterance)
+            createTextToSpeechSession()
         }
         else {
             speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
@@ -284,10 +283,17 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIIm
     }
     
     func replayTaskDescription(){
-        let speechUtterance = AVSpeechUtterance(string: self.stepView.taskDescriptionView.text)
+        
         speechSynthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
-        speechSynthesizer.speak(speechUtterance)
+        createTextToSpeechSession()
         pauseEnabler = false
+    }
+    
+    func createTextToSpeechSession(){
+        let speechUtterance = AVSpeechUtterance(string: self.stepView.taskDescriptionView.text)
+        speechUtterance.rate = 0.40
+        speechSynthesizer.speak(speechUtterance)
+        
     }
     
     func backToDetailView(){
