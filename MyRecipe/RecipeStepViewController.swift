@@ -213,7 +213,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIIm
     
     func instantiateCamera(){
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
-            var imagePicker = UIImagePickerController()
+            let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.camera;
             imagePicker.allowsEditing = false
@@ -225,7 +225,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIIm
     func share(){
         let activityViewController:UIActivityViewController
         // set up activity view controller
-        activityViewController = UIActivityViewController(activityItems: [imageToShare], applicationActivities: nil)
+        activityViewController = UIActivityViewController(activityItems: [imageToShare!], applicationActivities: nil)
             
         activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
         
