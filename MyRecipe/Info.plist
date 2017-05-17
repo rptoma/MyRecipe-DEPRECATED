@@ -28,7 +28,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string></string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>true</string>
+	<string>We need to access your microphone so you can tell the phone what to do next!</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string></string>
 	<key>UILaunchStoryboardName</key>
