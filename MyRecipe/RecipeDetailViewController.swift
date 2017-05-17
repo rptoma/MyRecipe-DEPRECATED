@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import Material
 
 class RecipeDetailViewController: UIViewController {
 
-    @IBOutlet weak var startButton: UIButton!
     
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     @IBOutlet var detailView: DetailView!
 
+    @IBOutlet weak var startButton: RaisedButton!
     
     var recipe: Recipe!
     let requestManager = RequestManager()
@@ -71,9 +72,8 @@ class RecipeDetailViewController: UIViewController {
 */
 
     func customizeStartButton(){
-        startButton.transformButton()
         self.startButton.isUserInteractionEnabled = false
-        startButton.addShadow()
+        startButton.addColor()
         startButton.addTextSpacing()
     }
     

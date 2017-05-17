@@ -8,11 +8,12 @@
 
 import UIKit
 import AVFoundation
+import Material
 
 class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIImagePickerControllerDelegate{
     
     @IBOutlet var stepView: StepView!
-    @IBOutlet weak var nextButtonOutlet: UIButton!
+    @IBOutlet weak var nextButtonOutlet: RaisedButton!
     
     @IBAction func replayAction(_ sender: Any) {
         replayTaskDescription()
@@ -295,7 +296,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIIm
     
     func nextButtonCustomization(){
         nextButtonOutlet.addTextSpacing()
-        nextButtonOutlet.addShadow()
+        nextButtonOutlet.addColor()
     }
     
 }
