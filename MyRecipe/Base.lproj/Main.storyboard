@@ -191,20 +191,20 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" placeholderIntrinsicWidth="349" placeholderIntrinsicHeight="200" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdF-3t-MMJ">
-                                <rect key="frame" x="16" y="311" width="349" height="193"/>
+                                <rect key="frame" x="16" y="310" width="349" height="193"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Ingredients:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwE-KJ-j1d">
-                                <rect key="frame" x="16" y="289" width="89" height="22"/>
+                                <rect key="frame" x="16" y="288" width="89" height="22"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
                                 <color key="textColor" white="0.1058094998" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sv-2F-Iwa">
-                                <rect key="frame" x="16" y="253" width="149" height="36"/>
+                                <rect key="frame" x="16" y="252" width="149" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2S-Ci-jLV">
                                         <rect key="frame" x="0.0" y="0.0" width="74.5" height="36"/>
@@ -222,14 +222,14 @@
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcL-dp-7cI">
-                                <rect key="frame" x="13" y="73" width="349" height="180"/>
+                                <rect key="frame" x="13" y="71" width="349" height="181"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WY1-rz-J9B">
-                                <rect key="frame" x="16" y="50" width="146" height="23"/>
+                                <rect key="frame" x="16" y="48" width="146" height="23"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
                                 <color key="textColor" white="0.10580949982007344" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -257,7 +257,7 @@
                             <constraint firstItem="KcL-dp-7cI" firstAttribute="height" secondItem="ULn-rh-lf1" secondAttribute="height" multiplier="0.3" id="DYj-ru-HA3"/>
                             <constraint firstItem="2sv-2F-Iwa" firstAttribute="top" secondItem="KcL-dp-7cI" secondAttribute="bottom" id="GtP-PZ-INU"/>
                             <constraint firstItem="YdF-3t-MMJ" firstAttribute="top" secondItem="BwE-KJ-j1d" secondAttribute="bottom" id="Jpy-i1-E1l"/>
-                            <constraint firstItem="WY1-rz-J9B" firstAttribute="top" secondItem="I7w-JT-bta" secondAttribute="bottom" constant="2" id="P0z-4D-QpR"/>
+                            <constraint firstItem="WY1-rz-J9B" firstAttribute="top" secondItem="I7w-JT-bta" secondAttribute="bottom" id="P0z-4D-QpR"/>
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="top" secondItem="9va-XC-nHI" secondAttribute="bottom" constant="8" symbolic="YES" id="QnK-jL-um7"/>
                             <constraint firstItem="WY1-rz-J9B" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leadingMargin" id="SSF-Et-sWq"/>
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="centerX" secondItem="9va-XC-nHI" secondAttribute="centerX" id="Tep-yT-Auo"/>
@@ -403,7 +403,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IZA-Mi-Uu7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="bCA-AJ-cKU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="bCA-AJ-cKU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.80784313725490198" green="0.20392156862745098" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
