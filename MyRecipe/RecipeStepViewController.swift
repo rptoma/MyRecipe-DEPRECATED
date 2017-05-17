@@ -255,7 +255,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIIm
             self.instantiateCamera()
            
         }))
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: { (UIAlertAction) in
             self.backToDetailView()
         }))
         
