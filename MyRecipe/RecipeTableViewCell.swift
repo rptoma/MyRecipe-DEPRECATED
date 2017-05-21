@@ -49,7 +49,6 @@ class RecipeTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        hideLabels()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -92,6 +91,7 @@ class RecipeTableViewCell: UITableViewCell {
     }
     
     public func loadRecipePreview(recipe: Recipe) {
+        hideLabels()
         nameLabel.text = recipe.name
         durationLabel.text = "~" + TimeConverter.getTime(from: recipe.duration ?? 0)
         difficultyLabel.text = recipe.difficulty
