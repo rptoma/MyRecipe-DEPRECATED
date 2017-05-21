@@ -77,7 +77,7 @@ class RecipeTableViewCell: UITableViewCell {
         if let imgUrl = recipe.icon_image {
             if let url = URL(string: imgUrl) {
                 let resource = ImageResource(downloadURL: url, cacheKey: nil)
-                let processor = BlurImageProcessor(blurRadius: 3) >> ColorControlsProcessor(brightness: 0, contrast: 1, saturation: 1, inputEV: -0.3)
+                let processor = BlurImageProcessor(blurRadius: 4.1) >> ColorControlsProcessor(brightness: 0, contrast: 1, saturation: 1, inputEV: -0.3)
                 backgroundImageView.kf.indicatorType = .activity
                 backgroundImageView.kf.setImage(with: resource, placeholder: nil, options: [.processor(processor)], progressBlock: nil, completionHandler: { (_, _, _, _) in
                     DispatchQueue.main.async {
@@ -87,7 +87,7 @@ class RecipeTableViewCell: UITableViewCell {
             }
         }
         else {
-            backgroundImageView.image = UIImage(named: Base.DEFAULT_IMAGE_PATH)?.kf.blurred(withRadius: CGFloat(3)).kf.adjusted(brightness: 0, contrast: 1, saturation: 1, inputEV: -0.3)
+            backgroundImageView.image = UIImage(named: Base.DEFAULT_IMAGE_PATH)?.kf.blurred(withRadius: CGFloat(4.1)).kf.adjusted(brightness: 0, contrast: 1, saturation: 1, inputEV: -0.3)
         }
     }
     

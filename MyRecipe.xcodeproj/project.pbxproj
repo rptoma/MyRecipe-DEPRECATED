@@ -320,7 +320,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		210D2FDE438AC1F78FC656B4 /* [CP] Copy Pods Resources */ = {
@@ -512,7 +512,7 @@
 				);
 				INFOPLIST_FILE = MyRecipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.toma.myrecipe34221321;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toma.myrecipefinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = ./MyRecipe/OpenEarsHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -532,7 +532,7 @@
 				);
 				INFOPLIST_FILE = MyRecipe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.toma.myrecipe34221321;
+				PRODUCT_BUNDLE_IDENTIFIER = com.toma.myrecipefinal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = ./MyRecipe/OpenEarsHeader.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
