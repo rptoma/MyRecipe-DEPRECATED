@@ -15,7 +15,7 @@ class StepView: UIView{
    
     func updateViewObject(recipeStep: RecipeStep){
         taskLabel.text = recipeStep.task
-        taskDescriptionView.text = recipeStep.description
+        taskDescriptionView.text = recipeStep.details
     }
     
 }

@@ -27,6 +27,8 @@ class RecipeDetailViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        self.detailView.configureText()
         self.detailView.hideLabels()
         navigationController?.navigationBar.tintColor = UIColor.white
         customizeStartButton()

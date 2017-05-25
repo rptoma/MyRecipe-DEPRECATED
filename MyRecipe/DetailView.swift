@@ -37,6 +37,10 @@ class DetailView: UIView {
         ingredientsLabel.isHidden = false
     }
     
+    func configureText(){
+        descriptionTextView.adjustsFontSizeToFitWidth = true
+    }
+    
     func updateDetailViewObjects(recipeDescription:RecipeDescription){
         DispatchQueue.main.async {
             self.descriptionTextView.text = recipeDescription.recipeDescription
