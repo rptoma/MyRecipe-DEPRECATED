@@ -9,9 +9,11 @@
 import Foundation
 
 class DetailView: UIView {
-    @IBOutlet weak var descriptionLabel: UILabel!
+  
     
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionTextView: UILabel!
+
+    @IBOutlet weak var descriptionLabel: UILabel!
   
     @IBOutlet weak var durationLabel: UILabel!
     
@@ -33,6 +35,10 @@ class DetailView: UIView {
         descriptionLabel.isHidden = false
         durationLabel.isHidden = false
         ingredientsLabel.isHidden = false
+    }
+    
+    func configureText(){
+        descriptionTextView.adjustsFontSizeToFitWidth = true
     }
     
     func updateDetailViewObjects(recipeDescription:RecipeDescription){

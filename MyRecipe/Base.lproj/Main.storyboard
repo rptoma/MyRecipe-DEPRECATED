@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IZA-Mi-Uu7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="IZA-Mi-Uu7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -176,7 +176,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbL-gD-g0o" customClass="RaisedButton" customModule="Material">
-                                <rect key="frame" x="129" y="543" width="122" height="40"/>
+                                <rect key="frame" x="126" y="543" width="122" height="40"/>
                                 <color key="backgroundColor" red="0.80784313725490198" green="0.20392156862745098" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="122" id="2o7-Zg-24y"/>
@@ -191,20 +191,20 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" placeholderIntrinsicWidth="349" placeholderIntrinsicHeight="200" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdF-3t-MMJ">
-                                <rect key="frame" x="16" y="310" width="349" height="193"/>
+                                <rect key="frame" x="10" y="148" width="355" height="211"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Ingredients:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BwE-KJ-j1d">
-                                <rect key="frame" x="16" y="288" width="89" height="22"/>
+                                <rect key="frame" x="16" y="126" width="89" height="22"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
                                 <color key="textColor" white="0.1058094998" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2sv-2F-Iwa">
-                                <rect key="frame" x="16" y="252" width="149" height="36"/>
+                                <rect key="frame" x="16" y="90" width="149" height="36"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M2S-Ci-jLV">
                                         <rect key="frame" x="0.0" y="0.0" width="74.5" height="36"/>
@@ -221,13 +221,6 @@
                                     </textView>
                                 </subviews>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KcL-dp-7cI">
-                                <rect key="frame" x="13" y="71" width="349" height="181"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Short description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WY1-rz-J9B">
                                 <rect key="frame" x="16" y="48" width="146" height="23"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
@@ -235,7 +228,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="9va-XC-nHI">
-                                <rect key="frame" x="180" y="515" width="20" height="20"/>
+                                <rect key="frame" x="177" y="515" width="20" height="20"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I7w-JT-bta">
                                 <rect key="frame" x="335" y="7" width="30" height="41"/>
@@ -247,33 +240,38 @@
                                     <action selector="favoriteRecipe:" destination="wr8-2Q-7Na" eventType="touchUpInside" id="0DY-QV-Thd"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5b8-iv-g1j">
+                                <rect key="frame" x="16" y="74" width="343" height="0.0"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5b8-iv-g1j" firstAttribute="top" secondItem="WY1-rz-J9B" secondAttribute="bottom" constant="3" id="2If-2r-Yhe"/>
                             <constraint firstItem="BwE-KJ-j1d" firstAttribute="top" secondItem="2sv-2F-Iwa" secondAttribute="bottom" id="50i-cX-dpV"/>
-                            <constraint firstItem="KcL-dp-7cI" firstAttribute="top" secondItem="WY1-rz-J9B" secondAttribute="bottom" id="9CA-VH-5up"/>
-                            <constraint firstAttribute="trailing" secondItem="KcL-dp-7cI" secondAttribute="trailing" constant="13" id="ANu-8D-AN1"/>
-                            <constraint firstItem="YdF-3t-MMJ" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leading" constant="16" id="C0Q-ww-lDO"/>
-                            <constraint firstItem="KcL-dp-7cI" firstAttribute="height" secondItem="ULn-rh-lf1" secondAttribute="height" multiplier="0.3" id="DYj-ru-HA3"/>
-                            <constraint firstItem="2sv-2F-Iwa" firstAttribute="top" secondItem="KcL-dp-7cI" secondAttribute="bottom" id="GtP-PZ-INU"/>
+                            <constraint firstItem="YdF-3t-MMJ" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leading" constant="10" id="C0Q-ww-lDO"/>
                             <constraint firstItem="YdF-3t-MMJ" firstAttribute="top" secondItem="BwE-KJ-j1d" secondAttribute="bottom" id="Jpy-i1-E1l"/>
                             <constraint firstItem="WY1-rz-J9B" firstAttribute="top" secondItem="I7w-JT-bta" secondAttribute="bottom" id="P0z-4D-QpR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5b8-iv-g1j" secondAttribute="trailing" id="PaG-aC-IYj"/>
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="top" secondItem="9va-XC-nHI" secondAttribute="bottom" constant="8" symbolic="YES" id="QnK-jL-um7"/>
                             <constraint firstItem="WY1-rz-J9B" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leadingMargin" id="SSF-Et-sWq"/>
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="centerX" secondItem="9va-XC-nHI" secondAttribute="centerX" id="Tep-yT-Auo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="I7w-JT-bta" secondAttribute="trailing" constant="-6" id="b5G-YN-XhS"/>
-                            <constraint firstItem="YdF-3t-MMJ" firstAttribute="height" secondItem="ULn-rh-lf1" secondAttribute="height" multiplier="0.32" id="cAH-e2-lLC"/>
+                            <constraint firstItem="YdF-3t-MMJ" firstAttribute="height" secondItem="ULn-rh-lf1" secondAttribute="height" multiplier="0.35" id="cAH-e2-lLC"/>
                             <constraint firstItem="BwE-KJ-j1d" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leading" constant="16" id="cGp-0P-R8h"/>
                             <constraint firstItem="kbL-gD-g0o" firstAttribute="centerX" secondItem="YdF-3t-MMJ" secondAttribute="centerX" id="dMI-Ge-d7h"/>
                             <constraint firstAttribute="bottom" secondItem="kbL-gD-g0o" secondAttribute="bottom" constant="20" symbolic="YES" id="eWw-2V-a4R"/>
                             <constraint firstAttribute="trailing" secondItem="YdF-3t-MMJ" secondAttribute="trailing" constant="10" id="fsR-aj-cY1"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="5b8-iv-g1j" secondAttribute="leading" id="lLE-rb-wbe"/>
                             <constraint firstItem="2sv-2F-Iwa" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leadingMargin" id="nXq-Kl-KlX"/>
+                            <constraint firstItem="2sv-2F-Iwa" firstAttribute="top" secondItem="5b8-iv-g1j" secondAttribute="bottom" constant="16" id="oLp-5q-Zgq"/>
                             <constraint firstItem="I7w-JT-bta" firstAttribute="top" secondItem="t2N-F0-ba0" secondAttribute="bottom" constant="7" id="rwv-Gr-fyl"/>
-                            <constraint firstItem="KcL-dp-7cI" firstAttribute="leading" secondItem="ULn-rh-lf1" secondAttribute="leading" constant="13" id="shY-KR-F5O"/>
                         </constraints>
                         <connections>
                             <outlet property="descriptionLabel" destination="WY1-rz-J9B" id="fjd-tN-le3"/>
-                            <outlet property="descriptionTextView" destination="KcL-dp-7cI" id="IYn-SV-XR5"/>
+                            <outlet property="descriptionTextView" destination="5b8-iv-g1j" id="e1J-Ue-usT"/>
                             <outlet property="durationLabel" destination="M2S-Ci-jLV" id="vmb-V7-2HC"/>
                             <outlet property="durationTextView" destination="ckg-rb-eeO" id="hjr-7I-ok2"/>
                             <outlet property="ingredientsLabel" destination="BwE-KJ-j1d" id="DDt-La-Omj"/>
@@ -403,7 +401,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IZA-Mi-Uu7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="bCA-AJ-cKU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="bCA-AJ-cKU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.80784313725490198" green="0.20392156862745098" blue="0.19215686274509802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
