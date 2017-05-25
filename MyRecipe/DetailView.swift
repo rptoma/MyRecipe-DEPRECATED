@@ -9,9 +9,11 @@
 import Foundation
 
 class DetailView: UIView {
-    @IBOutlet weak var descriptionLabel: UILabel!
+  
     
-    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var descriptionTextView: UILabel!
+
+    @IBOutlet weak var descriptionLabel: UILabel!
   
     @IBOutlet weak var durationLabel: UILabel!
     
