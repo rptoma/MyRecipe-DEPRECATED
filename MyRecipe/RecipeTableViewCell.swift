@@ -80,7 +80,7 @@ class RecipeTableViewCell: UITableViewCell {
                 backgroundImageView.kf.indicatorType = .activity
                 backgroundImageView.kf.setImage(with: resource, placeholder: nil, options: [.processor(processor)], progressBlock: nil, completionHandler: { (_, _, _, _) in
                     DispatchQueue.main.async {
-                        self.showLabels()
+                        //self.showLabels()
                     }
                 })
             }
@@ -91,7 +91,7 @@ class RecipeTableViewCell: UITableViewCell {
     }
     
     public func loadRecipePreview(recipe: Recipe) {
-        hideLabels()
+        //hideLabels()
         nameLabel.text = recipe.name
         durationLabel.text = "~" + TimeConverter.getTime(from: recipe.duration ?? 0)
         difficultyLabel.text = recipe.difficulty
