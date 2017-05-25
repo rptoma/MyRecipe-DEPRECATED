@@ -45,7 +45,8 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIIm
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        stepView.taskDescriptionView.textContainer.lineFragmentPadding = 0
+        stepView.taskDescriptionView.textContainerInset = .zero
         setNotificationCenter()
         self.openEarsEventsObserver.delegate = self
         nextButtonCustomization()
