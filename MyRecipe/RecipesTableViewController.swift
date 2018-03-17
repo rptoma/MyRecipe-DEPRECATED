@@ -75,7 +75,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         
         searchController.searchBar.backgroundColor = UIColor.black
         
-        let cancelButtonAttributes: [String: AnyObject] = [NSForegroundColorAttributeName: UIColor.white]
+        let cancelButtonAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(cancelButtonAttributes, for: .normal)
         
         definesPresentationContext = true
@@ -91,7 +91,7 @@ class RecipesTableViewController: UITableViewController, UISearchBarDelegate {
         setupRefreshControl()
     }
     
-    func handleRefresh(refreshControl: UIRefreshControl) {
+    @objc func handleRefresh(refreshControl: UIRefreshControl) {
         refreshing = true
         recipes = [Recipe]()
         pageNumber = 1

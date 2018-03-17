@@ -110,7 +110,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIIm
         notificationCenter.addObserver(self, selector: #selector(appMovedFromBackground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
     }
     
-    func appMovedFromBackground(){
+    @objc func appMovedFromBackground(){
         
         if recognitionStopped == true{
             recognitionStopped = false
@@ -119,13 +119,13 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIIm
         
     }
     
-    func appMovedToBackground(){
+    @objc func appMovedToBackground(){
         
         OEPocketsphinxController.sharedInstance().suspendRecognition()
         OEPocketsphinxController.sharedInstance().stopListening()
     
     }
-    func appMovedFromResignActive(){
+    @objc func appMovedFromResignActive(){
         
         if recognitionStopped == true{
             recognitionStopped = false
@@ -135,7 +135,7 @@ class RecipeStepViewController: UIViewController, OEEventsObserverDelegate, UIIm
         
     }
     
-    func appMovedToResignActive(){
+    @objc func appMovedToResignActive(){
         
         OEPocketsphinxController.sharedInstance().suspendRecognition()
         OEPocketsphinxController.sharedInstance().stopListening()
