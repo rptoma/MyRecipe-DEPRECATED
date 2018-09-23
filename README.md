@@ -1,3 +1,6 @@
+
+# See BitBucket for the current version
+
 # MyRecipe
 MyRecipe **iOS** app
 
